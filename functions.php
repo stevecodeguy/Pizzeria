@@ -122,6 +122,8 @@ add_action( 'widgets_init', 'lmpizza_widgets_init' );
 function lmpizza_scripts() {
 	wp_enqueue_style( 'lmpizza-style', get_stylesheet_uri() );
 
+	wp_enqueue_script( 'lmpizza-map', get_template_directory_uri() .'/js/map.js', array('jquery'), '20190923', true );
+
 	wp_enqueue_script( 'lmpizza-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'lmpizza-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
@@ -171,3 +173,4 @@ function my_acf_init() {
 }
 
 add_action('acf/init', 'my_acf_init');
+
