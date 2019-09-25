@@ -14,13 +14,11 @@
 
 get_header();
 ?>
-	<!-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script> -->
-
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-	<h1>THE MOON IS MADE OF CHEEEEEEESE!</h1>
-	<!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAp6PoLDNvrN3WlJh9qsKwGJyrsPuTPhZo&callback=myMap"></script> -->
-	<div class="acf-map"></div>
+
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAp6PoLDNvrN3WlJh9qsKwGJyrsPuTPhZo"></script>
+
 		<?php
 		while ( have_posts() ) :
 			the_post();
@@ -32,13 +30,23 @@ get_header();
 				comments_template();
 			endif;
 
-			if(function_exists('get_field')){
-				
-				// if (get_field('location_map')){
-				// 	the_field('location_map');
-				// }
-			}
+			$location1 = get_field('map_site_1');
+			
+			if( !empty($location1) ):
+				?>
+				<div class="acf-map">
+					<div class="marker" data-lat="<?php echo $location1['lat']; ?>" data-lng="<?php echo $location1['lng']; ?>"></div>
+				</div>
+			<?php endif;
 
+			$location2 = get_field('map_site_2');
+
+			if( !empty($location2) ):
+			?>
+				<div class="acf-map">
+					<div class="marker" data-lat="<?php echo $location2['lat']; ?>" data-lng="<?php echo $location2['lng']; ?>"></div>
+				</div>
+			<?php endif;
 			
 		endwhile; // End of the loop.
 		?>
