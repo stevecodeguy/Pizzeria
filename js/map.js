@@ -13,8 +13,6 @@
 */
 
 function new_map( $el, latpass, lngpass ) {
-	// console.log(latpass, lngpass);
-	// 49.2834511, lng: -123.1174435
 	var $markers = $el.find('.marker');
 	var args = {
 		zoom		: 16,
@@ -35,6 +33,8 @@ function new_map( $el, latpass, lngpass ) {
 	// center map
 	center_map( map );
 
+
+	
 	return map;
 }
 
@@ -114,6 +114,7 @@ function center_map( map ) {
 		// fit to bounds
 		map.fitBounds( bounds );
 	}
+
 }
 
 /*
@@ -136,18 +137,20 @@ $(document).ready(function(){
 
 	$('.acf-map').each(function(){
 
-		let latitudeLongitude = [
-			{lat: 49.2834511, lng: -123.1174435}, 
-			{lat: 49.3006737, lng: -123.13008}
-		]
-		// map = new_map( $(this), 49.2834511, -123.1174435);
-		// map = new_map( $(this), 49.3006737, -123.13008);
+		// let latitudeLongitude = [
+		// 	{lat: 49.2834511, lng: -123.1174435}, 
+		// 	{lat: 49.3006737, lng: -123.13008}
+		// ]
 
 		// create maps
-		latitudeLongitude.forEach(mapLocation => {
-			map = new_map( $(this), mapLocation.lat, mapLocation.lng );
-		});
+		// latitudeLongitude.forEach(mapLocation => {
+		// 	map = new_map( $(this), mapLocation.lat, mapLocation.lng );
+		// });
+		
+		map = new_map( $(this), 49.2834511, -123.1174435 );
 	});
 });
 
+
 })(jQuery);
+
