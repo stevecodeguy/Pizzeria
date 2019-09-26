@@ -30,23 +30,29 @@ get_header();
 				comments_template();
 			endif;
 
-			$location1 = get_field('map_site_1');
+			// check if the repeater field has rows of data
+			if( have_rows('map') ):
+
+				// loop through the rows of data
+			while ( have_rows('map') ) : the_row();
+
+				// display a sub field value
+				$location = get_sub_field('map_site');
 			
-			if( !empty($location1) ):
-				?>
-				<div class="acf-map">
-					<div class="marker" data-lat="<?php echo $location1['lat']; ?>" data-lng="<?php echo $location1['lng']; ?>"></div>
-				</div>
-			<?php endif;
+				if( !empty($location) ):
+					?>
+					<div class="acf-map">
+						<div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"></div>
+					</div>
+				<?php endif;
 
-			$location2 = get_field('map_site_2');
+			endwhile;
 
-			if( !empty($location2) ):
-			?>
-				<div class="acf-map">
-					<div class="marker" data-lat="<?php echo $location2['lat']; ?>" data-lng="<?php echo $location2['lng']; ?>"></div>
-				</div>
-			<?php endif;
+			else :
+
+			// no rows found
+
+			endif;
 			
 		endwhile; // End of the loop.
 		?>
