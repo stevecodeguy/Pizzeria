@@ -123,6 +123,8 @@ function lmpizza_scripts() {
 	wp_enqueue_style( 'lmpizza-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'lmpizza-map', get_template_directory_uri() .'/js/map.js', array('jquery'), '20190923', true );
+	
+	wp_enqueue_script( 'google-map', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAp6PoLDNvrN3WlJh9qsKwGJyrsPuTPhZo' );
 
 	wp_enqueue_script( 'lmpizza-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
