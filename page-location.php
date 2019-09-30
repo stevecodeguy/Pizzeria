@@ -17,8 +17,6 @@ get_header();
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAp6PoLDNvrN3WlJh9qsKwGJyrsPuTPhZo"></script>
-
 		<?php
 		while ( have_posts() ) :
 			the_post();

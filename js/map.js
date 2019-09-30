@@ -135,18 +135,7 @@ var map = null;
 
 $(document).ready(function(){
 
-	$('.acf-map').each(function(){
-
-		// let latitudeLongitude = [
-		// 	{lat: 49.2834511, lng: -123.1174435}, 
-		// 	{lat: 49.3006737, lng: -123.13008}
-		// ]
-
-		// create maps
-		// latitudeLongitude.forEach(mapLocation => {
-		// 	map = new_map( $(this), mapLocation.lat, mapLocation.lng );
-		// });
-		
+	$('.acf-map').each(function(){	
 		map = new_map( $(this), 49.2834511, -123.1174435 );
 	});
 });
