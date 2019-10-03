@@ -55,6 +55,18 @@ wp_nav_menu(array(
 ));
 ?>
 		</nav><!-- #site-navigation -->
+
+		<nav id="site-navigation" class="main-navigation">
+			<button class="menu-toggle" aria-controls="secondary-menu" aria-expanded="false"><?php esc_html_e('secondary Menu', 'lmpizza');?></button>
+			<?php
+wp_nav_menu(array(
+    'theme_location' => 'menu-2',
+    'menu_id' => 'secondary-menu',
+));
+?>
+		</nav><!-- #site-navigation -->
+
+
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
