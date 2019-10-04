@@ -170,6 +170,11 @@ if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
 
+function my_remove_lightbox() {
+	remove_theme_support( 'wc-product-gallery-zoom' );
+}
+add_action( 'init', 'my_remove_lightbox' );
+
 function my_acf_init() {
 	acf_update_setting('google_api_key', 'AIzaSyAp6PoLDNvrN3WlJh9qsKwGJyrsPuTPhZo');
 }
