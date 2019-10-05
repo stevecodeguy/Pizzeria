@@ -42,7 +42,7 @@ if (have_rows('about_family')):
 
         echo '<div class="">';
         if (get_sub_field('family_photo')) {
-            wp_get_attachment_image(get_sub_field('family_photo'), 'medium', '', array("class" => "alignleft"));
+            echo wp_get_attachment_image(get_sub_field('family_photo'), 'medium', '', array("class" => "alignleft"));
         }
 
         the_sub_field('description');
