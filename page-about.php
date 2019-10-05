@@ -30,11 +30,31 @@ while (have_posts()):
         comments_template();
     endif;
 
-    if (function_exists('get_field')) {
-
-    }
-
 endwhile; // End of the loop.
+
+//---------------------------------- ABOUT FAMILY REPEATER ---------------------------------------
+
+// check if the repeater field has rows of data
+if (have_rows('about_family')):
+
+    // loop through the rows of data
+    while (have_rows('about_family')): the_row();
+
+        echo '<div class="">';
+        if (get_sub_field('family_photo')) {
+            wp_get_attachment_image(get_sub_field('family_photo'), 'medium', '', array("class" => "alignleft"));
+        }
+
+        the_sub_field('description');
+        echo '</div>';
+    endwhile;
+
+else:
+
+    // no rows found
+
+endif;
+
 ?>
 
 		</main><!-- #main -->

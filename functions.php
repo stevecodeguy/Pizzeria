@@ -46,7 +46,7 @@ if (!function_exists('lmpizza_setup')):
         // This theme uses wp_nav_menu() in one location.
         register_nav_menus(array(
             'menu-1' => esc_html__('Primary', 'lmpizza'),
-           
+
             'menu-2' => esc_html__('secondary', 'lmpizza'),
         ));
 
@@ -176,12 +176,19 @@ if (class_exists('WooCommerce')) {
     require get_template_directory() . '/inc/woocommerce.php';
 }
 
-function my_remove_lightbox() {
-	remove_theme_support( 'wc-product-gallery-zoom' );
-}
-add_action( 'init', 'my_remove_lightbox' );
+/**
+ * Register CPTs and Taxonomies
+ */
+require get_template_directory() . '/inc/register-cpt-tax.php';
 
-function my_acf_init() {
+function my_remove_lightbox()
+{
+    remove_theme_support('wc-product-gallery-zoom');
+}
+add_action('init', 'my_remove_lightbox');
+
+function my_acf_init()
+{
     acf_update_setting('google_api_key', 'AIzaSyAp6PoLDNvrN3WlJh9qsKwGJyrsPuTPhZo');
 }
 add_action('acf/init', 'my_acf_init');
