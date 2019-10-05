@@ -24,7 +24,7 @@ document.getElementById('img-ingredient-container').appendChild(subContainer);
 function getImages(index, element){
     let crust = '';
     //fetch media images from REST API
-    fetch('http://localhost/pizza/wp-json/wp/v2/media?per_page=100')
+    fetch('http://pizzeria.bcitwebdeveloper.ca/wp-json/wp/v2/media?per_page=100')
         .then(response => response.json())
         .then((data) => {
             data.map((ingredient) => {
