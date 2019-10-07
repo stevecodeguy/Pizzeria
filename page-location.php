@@ -39,7 +39,7 @@ get_header();
 			
 				if( !empty($location) ):
 					?>
-					<div class="acf-map" style="300px">
+					<div class="acf-map">
 						<div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"></div>
 					</div>
 				<?php endif;
