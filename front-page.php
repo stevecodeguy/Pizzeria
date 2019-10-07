@@ -35,21 +35,30 @@ while (have_posts()):
     }
 
 endwhile; // End of the loop.
+?>
 
-echo '<h2>Our customers say</h2>';?>
+
+
+
+<section class="front-slider">
+ <h2 class="testimonials-title">Our customers say</h2>
 <?php
 
 $args = array('post_type' => 'ms-testimonial', 'posts_per_page' => -1);
 $query = new WP_Query($args);
 if ($query->have_posts()) {
+    echo '<div class="slider">';
     while ($query->have_posts()) {
         $query->the_post();
         the_content();
     }
     wp_reset_postdata();
+    echo '</div>';
 }
 
 ?>
+
+</section>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
