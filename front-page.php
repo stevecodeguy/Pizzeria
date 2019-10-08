@@ -41,9 +41,9 @@ endwhile; // End of the loop.
 <!------------------------------------------ Deals Slider -------------------------------------->
 
 
-<section class="front-slider slider">
-    <ul class="front-slider slider">
-    <?php
+<section class="front-slider">
+
+<?php
 
 $args = array('post_type' => 'ms-deals', 'posts_per_page' => -1);
 $query = new WP_Query($args);
@@ -52,12 +52,25 @@ if ($query->have_posts()) {
     while ($query->have_posts()) {
         $query->the_post();
         the_content();
+
+        if (function_exists('get_field')) {
+
+            echo '<div class="">';
+            if (get_field('deal_image')) {
+                echo wp_get_attachment_image(get_field('deal_image'), 'full', '', array("class" => "alignleft"));
+            }
+            echo '</div>';
+        }
+
     }
     wp_reset_postdata();
     echo '</div>';
 }
+
 ?>
-    </section>
+
+</section>
+
 
 <!------------------------------------------ Instagram Feed -------------------------------------->
 
