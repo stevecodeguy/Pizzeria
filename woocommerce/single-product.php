@@ -31,7 +31,7 @@ get_header( 'shop' ); ?>
 		do_action( 'woocommerce_before_main_content' );
 	?>
 		<?php while ( have_posts() ) : the_post(); ?>
-		
+
 			<?php
 				if(is_single('custom-pizza')){
 					wp_enqueue_script( 'lmpizza-custom', get_template_directory_uri() .'/js/custom-pizza.js', array(), '20191003', true );
