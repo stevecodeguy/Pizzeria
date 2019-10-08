@@ -39,12 +39,13 @@ if (have_rows('about_family')):
 
     // loop through the rows of data
     while (have_rows('about_family')): the_row();
-
-        echo '<div class="">';
+        
+        echo '<div class="family-photo">';
         if (get_sub_field('family_photo')) {
             echo wp_get_attachment_image(get_sub_field('family_photo'), 'medium', '', array("class" => "alignleft"));
         }
-
+        echo'</div>';
+        echo'<div class="family-description">';
         the_sub_field('description');
         echo '</div>';
     endwhile;

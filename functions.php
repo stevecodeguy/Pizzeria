@@ -86,6 +86,10 @@ if (!function_exists('lmpizza_setup')):
 endif;
 add_action('after_setup_theme', 'lmpizza_setup');
 
+
+
+
+
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -171,6 +175,13 @@ function lmpizza_scripts()
     }
 }
 add_action('wp_enqueue_scripts', 'lmpizza_scripts');
+
+
+
+
+
+
+
 
 /**
  * Implement the Custom Header feature.
