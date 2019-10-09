@@ -32,16 +32,16 @@ wp_nav_menu(array(
     'theme_location' => 'social',
     'menu_id' => 'social-menu',
 ));
-?>
 
+echo '<p class="copyright-text">Copyright © 2019, All Rights Reserved</p>';
+?>
 </nav><!-- #site-navigation -->
 
 				<?php
 
-echo "Copyright © 2019, All Rights Reserved"
 /* translators: 1: Theme name, 2: Theme author. */
 // printf( esc_html__( 'Theme: %1$s by %2$s.', 'lmpizza' ), 'lmpizza', '<a href="http://underscores.me/">Underscores.me</a>' );
- ?>
+?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
