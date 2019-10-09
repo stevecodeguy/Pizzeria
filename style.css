@@ -178,7 +178,7 @@ dt { font-weight: bold; }
 
 dd { margin: 0 1.5em 1.5em; }
 
-img { height: auto; /* Make sure images are scaled correctly. */ max-width: 100%; /* Adhere to container width. */ }
+img { height: auto; /* Make sure images are scaled correctly. */ width: 100%; /* Adhere to container width. */ }
 
 figure { margin: 1em 0; /* Extra wide images within figure tags don't overflow the content area. */ }
 
@@ -396,6 +396,8 @@ ul#social-menu.menu a { text-decoration: none; color: white; }
 .acf-map img { max-width: inherit !important; }
 
 h2.testimonials-title { background-color: #f0f0f0; margin: 0; padding: 30px 0 10px; text-align: center; }
+
+blockquote.wp-block-quote { width: 50%; height: 150px; margin: auto; }
 
 /*--------------------------------------------------------------
 ## About Family

@@ -98,8 +98,10 @@ $query = new WP_Query($args);
 if ($query->have_posts()) {
     echo '<div class="slider">';
     while ($query->have_posts()) {
+        echo '<div class="testimonial-slider">';
         $query->the_post();
         the_content();
+        echo '</div>';
     }
     wp_reset_postdata();
     echo '</div>';
