@@ -19,7 +19,28 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
-/*-------------------------------------------------------------- >>> TABLE OF CONTENTS: ---------------------------------------------------------------- # Normalize # Typography # Elements # Forms # Navigation ## Links ## Menus # Accessibility # Alignments # Clearings # Widgets # Content ## Posts and pages ## Comments # Infinite scroll # Media ## Captions ## Galleries --------------------------------------------------------------*/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Navigation
+	## Links
+	## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+	## Posts and pages
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+--------------------------------------------------------------*/
 @import url("https://fonts.googleapis.com/css?family=Great+Vibes|Raleway:300,400,500,600,700|Roboto:300,400,500,700,900&display=swap");
 /*--------------------------------------------------------------
 # Normalize
@@ -315,6 +336,25 @@ a:hover, a:active { outline: 0; }
 
 /* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
 .infinity-end.neverending .site-footer { display: block; }
+
+/*--------------------------------------------------------------
+# Animations
+--------------------------------------------------------------*/
+#loading-front { -webkit-animation: spin-front 2s infinite; animation: spin-front 2s infinite; -webkit-animation-direction: alternate; animation-direction: alternate; display: none; }
+
+#loading-back { transform: translate(-50%, -50%) rotateY(90deg); -webkit-animation: spin-back 2s infinite; animation: spin-back 2s infinite; -webkit-animation-direction: alternate; animation-direction: alternate; display: none; }
+
+@-webkit-keyframes spin-front { 0% { transform: translate(-50%, -50%) rotateY(0); }
+	50%, 100% { transform: translate(-50%, -50%) rotateY(90deg); } }
+
+@keyframes spin-front { 0% { transform: translate(-50%, -50%) rotateY(0); }
+	50%, 100% { transform: translate(-50%, -50%) rotateY(90deg); } }
+
+@-webkit-keyframes spin-back { 0%, 50% { transform: translate(-50%, -50%) rotateY(90deg); }
+	100% { transform: translate(-50%, -50%) rotateY(0); } }
+
+@keyframes spin-back { 0%, 50% { transform: translate(-50%, -50%) rotateY(90deg); }
+	100% { transform: translate(-50%, -50%) rotateY(0); } }
 
 /*--------------------------------------------------------------
 # Media

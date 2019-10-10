@@ -1,0 +1,31 @@
+#loading-front {
+    animation: spin-front 2s infinite;
+    animation-direction: alternate;
+    display: none;
+}
+
+#loading-back {
+    transform: translate(-50%, -50%) rotateY(90deg);
+    animation: spin-back 2s infinite;
+    animation-direction: alternate;
+    display: none;
+}
+
+@keyframes spin-front {
+    0% {
+        transform: translate(-50%, -50%) rotateY(0);
+    }
+    50%, 100% {
+        transform: translate(-50%, -50%) rotateY(90deg);
+    }
+}
+
+@keyframes spin-back {
+    0%, 50%{
+        transform: translate(-50%, -50%) rotateY(90deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotateY(0);
+    }
+}
+
