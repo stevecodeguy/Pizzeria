@@ -46,8 +46,8 @@ if (!function_exists('lmpizza_setup')):
         // This theme uses wp_nav_menu() in one location.
         register_nav_menus(array(
             'menu-1' => esc_html__('Primary', 'lmpizza'),
-
             'menu-2' => esc_html__('secondary', 'lmpizza'),
+            'social' => esc_html__('Social Menu Location', 'lmpizza'),
         ));
 
         /*
@@ -85,10 +85,6 @@ if (!function_exists('lmpizza_setup')):
     }
 endif;
 add_action('after_setup_theme', 'lmpizza_setup');
-
-
-
-
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -175,13 +171,6 @@ function lmpizza_scripts()
     }
 }
 add_action('wp_enqueue_scripts', 'lmpizza_scripts');
-
-
-
-
-
-
-
 
 /**
  * Implement the Custom Header feature.

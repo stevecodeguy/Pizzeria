@@ -1,5 +1,6 @@
 let ingredients = document.getElementsByClassName('wc-pao-addon-checkbox');
-let cheeseSauce = document.getElementsByClassName('wc-pao-addon-select');
+let cheeseDropdown = document.getElementsByName('addon-103-cheese-1');
+let sauceDropdown = document.getElementsByName('addon-103-sauce-0');
 let pizzaWidth  = document.getElementsByClassName('woocommerce-product-gallery__image')[0].offsetWidth;
 let pizzaHeight = document.getElementsByClassName('woocommerce-product-gallery__image')[0].offsetHeight;
 
@@ -30,6 +31,95 @@ subContainer.style['height']    = pizzaWidth + 'px';
 
 document.getElementById('img-ingredient-container').appendChild(subContainer);
 
+let loading     = document.createElement('h1');
+let loadingText = document.createTextNode('....Rolling Out The Dough.... Be with you in a moment...');
+
+loading.className          = 'loading';
+loading.style['position']  = 'relative';
+loading.style['color']     = '#83263C';
+loading.style['text-align']= 'center';
+loading.style['margin-top']= '240px';
+loading.style['font-size'] = '2.6em';
+loading.style['width']     = pizzaWidth + 'px';
+loading.style['height']    = pizzaWidth + 'px';
+
+loading.appendChild(loadingText);
+
+document.getElementById('img-ingredient-subcontainer').appendChild(loading);
+
+let restAPIData = new Array();
+let ingredientObjects = new Array();
+
+hideShowControls(ingredients, 0.2);
+hideShowControls(cheeseDropdown, 0.2);
+hideShowControls(sauceDropdown, 0.2);
+fetchData();
+
+function hideShowControls(item, hideShow){
+    for (let i = 0; i < item.length; i++){
+        item[i].parentNode.style['opacity'] = hideShow;
+        if (hideShow < 1){
+            item[i].disabled = 'disabled';
+        } else {
+            item[i].disabled = false;
+        }
+    };
+}
+
+function fetchData(){
+    fetch('https://pizzeria.bcitwebdeveloper.ca/wp-json/wp/v2/media?per_page=100')
+        .then(response => response.json())
+        .then((data) => {
+            data.map((ingredient) => {
+                let topping = {
+                    slug: ingredient.slug,
+                    source_url: ingredient.source_url
+                }
+
+                restAPIData.push(topping);
+            })
+        })
+        .then(() => {
+            for (let i = 0; i < restAPIData.length; i++){
+
+                for (let x = 0; x < ingredients.length; x++){
+                    if (restAPIData[i].slug === ingredients[x].value){
+                        ingredientObjects.push(restAPIData[i]);
+                        break;
+                    }
+                }
+
+                for (let y = 0; y < cheeseDropdown[0].options.length; y++){
+                    if (restAPIData[i].slug === cheeseDropdown[0].options[y].value.slice(0, -2)){
+                        ingredientObjects.push(restAPIData[i]);
+                        break;
+                    }
+                }
+
+                for (let z = 0; z < sauceDropdown[0].options.length; z++){
+                    
+                    if (restAPIData[i].slug === sauceDropdown[0].options[z].value.slice(0, -2)){
+                        ingredientObjects.push(restAPIData[i]);
+                        break;
+                    }
+                }
+                
+                if (restAPIData[i].slug === 'pizza-crust'){
+                    ingredientObjects.push(restAPIData[i]);
+                }
+                delete restAPIData[i];
+            }
+        })
+        .then(() => {
+            hideShowControls(ingredients, 1);
+            hideShowControls(cheeseDropdown, 1);
+            hideShowControls(sauceDropdown, 1);
+            loading.parentNode.removeChild(loading);
+        })
+        // .then(() => console.log(ingredientObjects, ingredientObjects.length))
+        .catch(error => alert(error));
+    }
+
 
 function getImages(checked, index, element){
     let countOfIngredients = 0;
@@ -46,60 +136,52 @@ function getImages(checked, index, element){
         }
     }
 
-    //fetch media images from REST API
-    fetch('https://pizzeria.bcitwebdeveloper.ca/wp-json/wp/v2/media?per_page=100')
-        .then(response => response.json())
-        .then((data) => {
-            data.map((ingredient) => {
-                let checkedIngredient = element.value;
+    let checkedIngredient = element.value;
+    let slug     = '';
+    let url      = '';
 
-                if (ingredient.slug == 'pizza-crust'){
-                    // if (checked){
-                        // if (document.getElementsByClassName('crust').length === 0) {
-                            console.log(ingredient.source_url)
-                            addCrust(ingredient.source_url);
-                        // }
-                    // }
-                }
+    ingredientObjects.find((item) => {
+        if (item.slug === 'pizza-crust'){
+            if (document.getElementsByClassName('crust').length == 0){
+                addCrust(item.source_url);
+            }
+        }
+    });
 
-                //compare image slug to check box value
-                if (ingredient.slug === checkedIngredient.replace(' ', '-') || 
-                    ingredient.slug === checkedIngredient.slice(0, -2)) {
+    ingredientObjects.find((item) => {
+        if (item.slug === checkedIngredient.replace(' ', '-') || 
+            item.slug === checkedIngredient.slice(0, -2)){
 
-                    switch (ingredient.slug) {
-                    case 'cheddar':
-                    case 'provolone':
-                    case 'mozzarella':
-                    case 'mozzarella-and-cheddar-blend':
-                        if (checked){
-                            // addCheeseOrSauce((ingredient.source_url).slice(0, -4) + '-base.png', 'cheese', 2);
-                            addCheeseOrSauce(ingredient.source_url, 'cheese', 2);
-                        } else {
-                            removeIngredient(ingredient.slug);
-                        }
-                        break;
-                    case 'alfredo-sauce':
-                    case 'barbeque-sauce':
-                    case 'cheesy-cheddar-sauce':
-                    case 'fresh-salsa':
-                    case 'organic-tomato-sauce':
-                        if (checked){
-                            addCheeseOrSauce(ingredient.source_url, 'sauce', 1);
-                        } else {
-                            removeIngredient(ingredient.slug);
-                        }
-                        break;
-                    default:
-                        if (checked){
-                            addIngredient(ingredient.source_url, index);
-                        } else {
-                            removeIngredient(ingredient.slug);
-                        }
-                    }
-                }
-            })
-        })
-        .catch(error => alert(error));
+            slug = item.slug;
+            url  = item.source_url;
+        }
+    });
+
+    switch (slug) {
+    case 'cheddar':
+    case 'provolone':
+    case 'mozzarella':
+    case 'mozzarella-and-cheddar-blend':
+    case 'feta':
+    case 'parmesan':
+        removeIngredient('cheese');
+        addCheeseOrSauce(url, 'cheese', 2);
+        break;
+    case 'alfredo-sauce':
+    case 'barbeque-sauce':
+    case 'cheesy-cheddar-sauce':
+    case 'fresh-salsa':
+    case 'organic-tomato-sauce':
+        removeIngredient('sauce');
+        addCheeseOrSauce(url, 'sauce', 1);
+        break;
+    default:
+        if (checked){
+            addIngredient(url, index);
+        } else {
+            removeIngredient(slug);
+        }
+    }
 }
 
 
@@ -107,7 +189,9 @@ function removeIngredient(removedIngredient) {
     //remove ingredient images
     let ingredient = document.getElementById(removedIngredient);
 
-    ingredient.parentNode.removeChild(ingredient);
+    if (ingredient) {
+        ingredient.parentNode.removeChild(ingredient);
+    }
 }
 
 
@@ -126,7 +210,7 @@ function addIngredientContainer(ingredient){
 
 
 function addIngredient(addedIngredientURL, index) {
-    if (ingredients[index].checked === true){
+    if (ingredients[index].checked === true || cheeseSauce[index].selected === true){
         //create ingredient images and place
         addIngredientContainer(ingredients[index].value);
 
@@ -167,28 +251,20 @@ function addIngredient(addedIngredientURL, index) {
 
 function addCheeseOrSauce(addedSauceOrCheeseURL, cheeseOrSauce, zIndex) {
     //create ingredient images and place
-
-    let sauceCheeseContainer = '';
-
-    if (zIndex < 100) {
-        if (document.getElementById(cheeseOrSauce)){
-            removeIngredient(cheeseOrSauce);
-        }
-
-        sauceCheeseContainer = document.createElement('div');
-
-        sauceCheeseContainer.id                  = cheeseOrSauce;
-        sauceCheeseContainer.style['width']      = pizzaWidth + 'px';
-        sauceCheeseContainer.style['height']     = pizzaWidth + 'px';
-        sauceCheeseContainer.style['position']   = 'absolute';
-        sauceCheeseContainer.style['top']        = '0';
-        sauceCheeseContainer.style['left']       = '0';
-
-        document.getElementById('img-ingredient-container').appendChild(sauceCheeseContainer);
-    } else {
-        sauceCheeseContainer = document.getElementById('cheese');
+    if (document.getElementById(cheeseOrSauce)){
+        removeIngredient(cheeseOrSauce);
     }
-    
+
+    let sauceCheeseContainer = document.createElement('div');
+
+    sauceCheeseContainer.id                  = cheeseOrSauce;
+    sauceCheeseContainer.style['width']      = pizzaWidth + 'px';
+    sauceCheeseContainer.style['height']     = pizzaWidth + 'px';
+    sauceCheeseContainer.style['position']   = 'absolute';
+    sauceCheeseContainer.style['top']        = '0';
+    sauceCheeseContainer.style['left']       = '0';
+
+    document.getElementById('img-ingredient-container').appendChild(sauceCheeseContainer);    
 
     let sauceCheeseImage = document.createElement('img');
     
@@ -302,12 +378,8 @@ for (const [checkboxArrayIndex, element] of Object.entries(ingredients)) {
 }
 
 //Assign click listeners to all ingredient dropdowns
-for (const [dropdownArrayIndex] of Object.entries(cheeseSauce)) {
-    cheeseSauce[dropdownArrayIndex].addEventListener(
-        'change', 
-        () => getImages(true, dropdownArrayIndex, cheeseSauce[dropdownArrayIndex])
-    );
-}
+cheeseDropdown[0].addEventListener('change', () => getImages(true, 0, cheeseDropdown[0]));
+sauceDropdown[0].addEventListener('change', () => getImages(true, 0, sauceDropdown[0]));
 
 
 window.addEventListener('resize', () => pizzaSize());
