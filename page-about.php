@@ -32,29 +32,47 @@ while (have_posts()):
 
 endwhile; // End of the loop.
 
-//---------------------------------- ABOUT FAMILY REPEATER ---------------------------------------
+//---------------------------------- ABOUT FAMILY CUSTOM FIELD ---------------------------------------
+echo "<div class='about-family-info-wrapper'>";
 
-// check if the repeater field has rows of data
-if (have_rows('about_family')):
+echo "<ul class='about-family-contain-1'>";
 
-    // loop through the rows of data
-    while (have_rows('about_family')): the_row();
-        
-        echo '<div class="family-photo">';
-        if (get_sub_field('family_photo')) {
-            echo wp_get_attachment_image(get_sub_field('family_photo'), 'medium', '', array("class" => "alignleft"));
-        }
-        echo'</div>';
-        echo'<div class="family-description">';
-        the_sub_field('description');
-        echo '</div>';
-    endwhile;
+if (function_exists('get_field')){
+    if(get_field('about_family_images_1')){
+        echo "<li class='about-family-img-1'>";
+            echo wp_get_attachment_image(get_field('about_family_images_1'), 'large', '', array("class" => "alignleft"));
+        echo"</li>"; 
+    };
+};
+if(function_exists('get_field')){
+    if(get_field('about_family_text_1')){
+        echo "<li class='about-family-text'>";
+            the_field('about_family_text_1');
+        echo"</li>";
+    }
+}
+echo"</ul>";// end about-family-contain-1
 
-else:
 
-    // no rows found
+echo "<ul class='about-family-contain-2'>";
 
-endif;
+if (function_exists('get_field')){
+    if(get_field('about_family_images_2')){ 
+        echo "<li class='about-family-img-2'>";
+            echo wp_get_attachment_image(get_field('about_family_images_2'), 'large', '', array("class" => "alignright"));
+        echo"</li>"; 
+    };
+};
+if(function_exists('get_field')){
+    if(get_field('about_family_text_2')){
+        echo "<li class='about-family-text'>"; 
+            the_field('about_family_text_2');
+         echo"</li>";
+    }
+}
+echo"</ul>";// end about-family-contain-2
+
+echo"</div>";// end image wrapper
 
 ?>
 

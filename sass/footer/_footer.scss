@@ -1,0 +1,28 @@
+#social-navigation .menu-social-menu-container {
+    background-color: #83243c;
+}
+
+ul#social-menu.menu {
+    list-style: none;
+    width: 40%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    // text-decoration: none;
+    // color: white;
+}
+
+ul#social-menu.menu a {
+    // list-style: none;
+    text-decoration: none;
+    color: white;
+}
+
+.copyright-text {
+    background-color: #83243c;
+    text-align: center;
+    margin: 0;
+    padding: 20px 0;
+    color: white;
+}

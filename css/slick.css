@@ -5,9 +5,8 @@
     display: block;
     box-sizing: border-box;
 
-    /* width: 60vw; */
+    width: 100vw;
     margin: auto;
-    background-color: rgb(240, 240, 240);
 
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -22,7 +21,6 @@
 }
 
 .slick-list.draggable {
-    width: 60vw;
     margin: auto;
 }
 

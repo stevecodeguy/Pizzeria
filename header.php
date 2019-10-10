@@ -40,13 +40,12 @@ if (is_front_page() && is_home()):
 				<?php
 else:
 ?>
-				<p class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name');?></a></p>
+
 				<?php
 endif;
 $lmpizza_description = get_bloginfo('description', 'display');
 if ($lmpizza_description || is_customize_preview()):
 ?>
-				<p class="site-description"><?php echo $lmpizza_description; /* WPCS: xss ok. */ ?></p>
 			<?php endif;?>
 		</div><!-- .site-branding -->
 

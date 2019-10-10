@@ -199,7 +199,7 @@ dt { font-weight: bold; }
 
 dd { margin: 0 1.5em 1.5em; }
 
-img { height: auto; /* Make sure images are scaled correctly. */ max-width: 100%; /* Adhere to container width. */ }
+img { height: auto; /* Make sure images are scaled correctly. */ /* Adhere to container width. */ }
 
 figure { margin: 1em 0; /* Extra wide images within figure tags don't overflow the content area. */ }
 
@@ -241,23 +241,23 @@ a:hover, a:active { outline: 0; }
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
-.main-navigation { clear: both; display: block; float: left; width: 100%; }
+.main-navigation, .product-navigation { clear: both; display: block; width: 100%; }
 
-.main-navigation ul { display: none; list-style: none; margin: 0; padding-left: 0; }
+.main-navigation ul, .product-navigation ul { display: none; list-style: none; margin: 0; padding-left: 0; }
 
-.main-navigation ul ul { box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2); float: left; position: absolute; top: 100%; left: -999em; z-index: 99999; }
+.main-navigation ul ul, .product-navigation ul ul { box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2); float: left; position: absolute; top: 100%; left: -999em; z-index: 99999; }
 
-.main-navigation ul ul ul { left: -999em; top: 0; }
+.main-navigation ul ul ul, .product-navigation ul ul ul { left: -999em; top: 0; }
 
-.main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul { left: 100%; }
+.main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul, .product-navigation ul ul li:hover > ul, .product-navigation ul ul li.focus > ul { left: 100%; }
 
-.main-navigation ul ul a { width: 200px; }
+.main-navigation ul ul a, .product-navigation ul ul a { width: 200px; }
 
-.main-navigation ul li:hover > ul, .main-navigation ul li.focus > ul { left: auto; }
+.main-navigation ul li:hover > ul, .main-navigation ul li.focus > ul, .product-navigation ul li:hover > ul, .product-navigation ul li.focus > ul { left: auto; }
 
-.main-navigation li { float: left; position: relative; }
+.main-navigation li, .product-navigation li { float: left; position: relative; }
 
-.main-navigation a { display: block; text-decoration: none; }
+.main-navigation a, .product-navigation a { display: block; text-decoration: none; }
 
 /* Small menu. */
 .menu-toggle, .main-navigation.toggled ul { display: block; }
@@ -419,6 +419,14 @@ embed, iframe, object { max-width: 100%; }
 
 .menu-sub-menu-container li a { opacity: 0; padding: 20px; }
 
+#social-navigation .menu-social-menu-container { background-color: #83243c; }
+
+ul#social-menu.menu { list-style: none; width: 40%; margin: auto; display: flex; justify-content: space-between; padding: 50px; }
+
+ul#social-menu.menu a { text-decoration: none; color: white; }
+
+.copyright-text { background-color: #83243c; text-align: center; margin: 0; padding: 20px 0; color: white; }
+
 /*--------------------------------------------------------------
 ## Google Map
 --------------------------------------------------------------*/
@@ -429,6 +437,12 @@ embed, iframe, object { max-width: 100%; }
 
 h2.testimonials-title { background-color: #f0f0f0; margin: 0; padding: 30px 0 10px; text-align: center; }
 
+.testimonial-slider .slick-dots, .testimonial-slider { background-color: #f0f0f0; }
+
+blockquote.wp-block-quote { width: 50%; height: 150px; margin: auto; }
+
+.deal-slider { width: 85%; margin: auto; }
+
 /*--------------------------------------------------------------
 ## About Family
 --------------------------------------------------------------*/
@@ -437,5 +451,9 @@ h2.testimonials-title { background-color: #f0f0f0; margin: 0; padding: 30px 0 10
 .wp-block-cover .wp-block-cover__inner-container p { font-family: "Great Vibes"; color: rgba(255, 255, 255, 0.897); font-size: 3rem; }
 
 .entry-content h2 { font-family: "Great Vibes"; color: rgba(65, 64, 64, 0.897); font-size: 2rem; }
+
+.deals-container { display: flex; flex-wrap: wrap; padding: 20px; justify-content: space-between; max-width: 80%; }
+
+.single-deal { list-style: none; margin: 0; padding: 10px; width: 35%; }
 
 /*# sourceMappingURL=../lmpizza/sass/maps/style.css.map */
