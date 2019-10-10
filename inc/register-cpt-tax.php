@@ -77,7 +77,7 @@ function ms_register_custom_post_types()
         'show_in_menu' => true,
         'show_in_nav_menus' => true,
         'show_in_admin_bar' => true,
-        'show_in_rest' => false,
+        'show_in_rest' => true,
         'query_var' => true,
         'rewrite' => array('slug' => 'deal'),
         'capability_type' => 'post',
@@ -85,7 +85,7 @@ function ms_register_custom_post_types()
         'hierarchical' => false,
         'menu_position' => 5,
         'menu_icon' => 'dashicons-archive',
-        'supports' => array('title'),
+        'supports' => array('title', 'thumbnail', 'editor'),
     );
 
     register_post_type('ms-deals', $args);
