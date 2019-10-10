@@ -154,7 +154,9 @@ template { display: none; }
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
-body, button, input, select, optgroup, textarea { color: #404040; font-family: sans-serif; font-size: 16px; font-size: 1rem; line-height: 1.5; }
+body, button, input, select, optgroup, textarea { color: #404040; font-family: "Raleway", "Roboto", sans-serif; font-size: 16px; font-size: 1rem; line-height: 1.5; }
+
+h1 { font-family: 'Great Vibes'; }
 
 h1, h2, h3, h4, h5, h6 { clear: both; }
 
@@ -199,7 +201,7 @@ dt { font-weight: bold; }
 
 dd { margin: 0 1.5em 1.5em; }
 
-img { height: auto; /* Make sure images are scaled correctly. */ /* Adhere to container width. */ }
+img { height: auto; /* Make sure images are scaled correctly. */ width: 100%; /* Adhere to container width. */ }
 
 figure { margin: 1em 0; /* Extra wide images within figure tags don't overflow the content area. */ }
 
@@ -451,6 +453,20 @@ blockquote.wp-block-quote { width: 50%; height: 150px; margin: auto; }
 .wp-block-cover .wp-block-cover__inner-container p { font-family: "Great Vibes"; color: rgba(255, 255, 255, 0.897); font-size: 3rem; }
 
 .entry-content h2 { font-family: "Great Vibes"; color: rgba(65, 64, 64, 0.897); font-size: 2rem; }
+
+.about-family-info-wrapper { align-items: center; margin: 0 auto; }
+
+.about-family-info-wrapper { margin-bottom: 10%; margin-left: 0; max-width: 100%; }
+
+.about-family-info-wrapper ul { padding: 0; margin: 0; }
+
+.about-family-info-wrapper li { list-style: none; padding: 0; margin-left: 0; }
+
+.about-family-text { text-align: center; }
+
+.about-family-contain-2 { margin-bottom: 10%; }
+
+@media only screen and (min-width: 700px) { .about-family-info-wrapper { width: 80%; } }
 
 .deals-container { display: flex; flex-wrap: wrap; padding: 20px; justify-content: space-between; max-width: 80%; }
 
