@@ -18,3 +18,39 @@
     color: rgba(65, 64, 64, 0.897);
     font-size: 2rem;
 }
+
+.about-family-info-wrapper{
+    align-items: center;
+    margin:0 auto;
+}
+
+.about-family-info-wrapper{
+   margin-bottom:10%;
+   margin-left:0;
+   max-width: 100%;
+}
+.about-family-info-wrapper ul{
+    padding: 0;
+    margin: 0;
+ }
+.about-family-info-wrapper li{
+    list-style: none;
+    padding: 0;
+    margin-left:0;
+ }
+
+ .about-family-text{
+     text-align: center;
+ }
+.about-family-contain-2{
+    margin-bottom: 10%;
+ }
+
+@media only screen and (min-width: 700px) {
+    .about-family-info-wrapper{
+        width: 80%; 
+    }
+.about-family-text-1{
+  
+}
+}

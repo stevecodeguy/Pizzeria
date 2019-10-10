@@ -398,4 +398,18 @@ h2.testimonials-title { background-color: #f0f0f0; margin: 0; padding: 30px 0 10
 
 .entry-content h2 { font-family: "Great Vibes"; color: rgba(65, 64, 64, 0.897); font-size: 2rem; }
 
+.about-family-info-wrapper { align-items: center; margin: 0 auto; }
+
+.about-family-info-wrapper { margin-bottom: 10%; margin-left: 0; max-width: 100%; }
+
+.about-family-info-wrapper ul { padding: 0; margin: 0; }
+
+.about-family-info-wrapper li { list-style: none; padding: 0; margin-left: 0; }
+
+.about-family-text { text-align: center; }
+
+.about-family-contain-2 { margin-bottom: 10%; }
+
+@media only screen and (min-width: 700px) { .about-family-info-wrapper { width: 80%; } }
+
 /*# sourceMappingURL=../lmpizza/sass/maps/style.css.map */
