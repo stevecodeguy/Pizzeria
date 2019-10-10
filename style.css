@@ -448,7 +448,7 @@ blockquote.wp-block-quote { width: 50%; height: 150px; margin: auto; }
 /*--------------------------------------------------------------
 ## About Family
 --------------------------------------------------------------*/
-.entry-content { max-width: 100%; text-align: center; font-family: 'Raleway','Roboto'; }
+.entry-header .entry-content { max-width: 100%; text-align: center; font-family: 'Raleway','Roboto'; }
 
 .wp-block-cover .wp-block-cover__inner-container p { font-family: "Great Vibes"; color: rgba(255, 255, 255, 0.897); font-size: 3rem; }
 
@@ -456,7 +456,7 @@ blockquote.wp-block-quote { width: 50%; height: 150px; margin: auto; }
 
 .about-family-info-wrapper { align-items: center; margin: 0 auto; }
 
-.about-family-info-wrapper { margin-bottom: 10%; margin-left: 0; max-width: 100%; }
+.about-family-info-wrapper { margin-bottom: 10%; }
 
 .about-family-info-wrapper ul { padding: 0; margin: 0; }
 
@@ -466,7 +466,7 @@ blockquote.wp-block-quote { width: 50%; height: 150px; margin: auto; }
 
 .about-family-contain-2 { margin-bottom: 10%; }
 
-@media only screen and (min-width: 700px) { .about-family-info-wrapper { width: 80%; } }
+@media only screen and (min-width: 650px) { .about-family-contain-1 ul { display: flex; } }
 
 .deals-container { display: flex; flex-wrap: wrap; padding: 20px; justify-content: space-between; max-width: 80%; }
 

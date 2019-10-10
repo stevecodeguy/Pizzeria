@@ -1,6 +1,7 @@
 /*--------------------------------------------------------------
 ## About Family
 --------------------------------------------------------------*/
+.entry-header
 .entry-content{
     max-width: 100%;
     text-align: center;
@@ -26,8 +27,6 @@
 
 .about-family-info-wrapper{
    margin-bottom:10%;
-   margin-left:0;
-   max-width: 100%;
 }
 .about-family-info-wrapper ul{
     padding: 0;
@@ -46,11 +45,8 @@
     margin-bottom: 10%;
  }
 
-@media only screen and (min-width: 700px) {
-    .about-family-info-wrapper{
-        width: 80%; 
+@media only screen and (min-width: 650px) {
+    .about-family-contain-1 ul{
+       display: flex;
     }
-.about-family-text-1{
-  
-}
 }
