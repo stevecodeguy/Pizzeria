@@ -101,6 +101,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "modules/infinite-scroll";
 
 /*--------------------------------------------------------------
+# Animations
+--------------------------------------------------------------*/
+@import "animations/animations";
+
+/*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
 @import "media/media";
@@ -111,3 +116,4 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "maps/maps";
 @import "slider";
 @import "about/about";
+@import "deals/deals";

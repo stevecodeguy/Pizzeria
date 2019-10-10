@@ -33,6 +33,9 @@ get_header( 'shop' ); ?>
 		<?php while ( have_posts() ) : the_post(); ?>
 
 			<?php
+				echo wp_get_attachment_image(189, 'full', '', array('id' => 'loading-front'));
+				echo wp_get_attachment_image(515, 'full', '', array('id' => 'loading-back'));
+
 				if(is_single('custom-pizza')){
 					wp_enqueue_script( 'lmpizza-custom', get_template_directory_uri() .'/js/custom-pizza.js', array(), '20191003', true );
 

@@ -31,21 +31,27 @@ subContainer.style['height']    = pizzaWidth + 'px';
 
 document.getElementById('img-ingredient-container').appendChild(subContainer);
 
-let loading     = document.createElement('h1');
-let loadingText = document.createTextNode('....Rolling Out The Dough.... Be with you in a moment...');
+let loadingFront = document.getElementById('loading-front');
+let loadingBack = document.getElementById('loading-back');
 
-loading.className          = 'loading';
-loading.style['position']  = 'relative';
-loading.style['color']     = '#83263C';
-loading.style['text-align']= 'center';
-loading.style['margin-top']= '240px';
-loading.style['font-size'] = '2.6em';
-loading.style['width']     = pizzaWidth + 'px';
-loading.style['height']    = pizzaWidth + 'px';
+loadingFront.style['position']  = 'absolute';
+loadingFront.style['left']      = '50%';
+loadingFront.style['top']       = '50%';
+loadingFront.style['transform'] = 'translate(-50%, -50%)';
+loadingFront.style['display']   = 'block';
+loadingFront.style['width']     = pizzaWidth * 0.5 + 'px';
+loadingFront.style['height']    = pizzaWidth * 0.5 + 'px';
 
-loading.appendChild(loadingText);
+loadingBack.style['position']  = 'absolute';
+loadingBack.style['left']      = '50%';
+loadingBack.style['top']       = '50%';
+loadingBack.style['transform'] = 'translate(-50%, -50%)';
+loadingBack.style['display']   = 'block';
+loadingBack.style['width']     = pizzaWidth * 0.5 + 'px';
+loadingBack.style['height']    = pizzaWidth * 0.5 + 'px';
 
-document.getElementById('img-ingredient-subcontainer').appendChild(loading);
+document.getElementById('img-ingredient-subcontainer').appendChild(loadingFront);
+document.getElementById('img-ingredient-subcontainer').appendChild(loadingBack);
 
 let restAPIData = new Array();
 let ingredientObjects = new Array();
@@ -53,6 +59,7 @@ let ingredientObjects = new Array();
 hideShowControls(ingredients, 0.2);
 hideShowControls(cheeseDropdown, 0.2);
 hideShowControls(sauceDropdown, 0.2);
+
 fetchData();
 
 function hideShowControls(item, hideShow){
@@ -114,7 +121,8 @@ function fetchData(){
             hideShowControls(ingredients, 1);
             hideShowControls(cheeseDropdown, 1);
             hideShowControls(sauceDropdown, 1);
-            loading.parentNode.removeChild(loading);
+            loadingFront.parentNode.removeChild(loadingFront);
+            loadingBack.parentNode.removeChild(loadingBack);
         })
         // .then(() => console.log(ingredientObjects, ingredientObjects.length))
         .catch(error => alert(error));
@@ -293,6 +301,7 @@ function addCrust(crustSrc) {
     crust.style['top']        = 0 + 'px';
     crust.style['z-index']    = 300;
     crust.style['overflow']   = 'hidden';
+    crust.style['max-width']  = '100%';
 
     document.getElementsByClassName('woocommerce-product-gallery__image')[0].appendChild(crust);
 }

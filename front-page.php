@@ -19,24 +19,6 @@ get_header();
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-		<?php
-while (have_posts()):
-    the_post();
-
-    get_template_part('template-parts/content', 'page');
-
-    // If comments are open or we have at least one comment, load up the comment template.
-    if (comments_open() || get_comments_number()):
-        comments_template();
-    endif;
-
-    if (function_exists('get_field')) {
-
-    }
-
-endwhile; // End of the loop.
-?>
-
 
 <!------------------------------------------ Deals Slider -------------------------------------->
 
@@ -57,7 +39,7 @@ if ($query->have_posts()) {
 
             echo '<div class="deal-image">';
             if (get_field('deal_image')) {
-                echo wp_get_attachment_image(get_field('deal_image'), 'large', '', array("class" => "alignleft"));
+                echo wp_get_attachment_image(get_field('deal_image'), 'medium', '', array("class" => "deal-slider"));
             }
             echo '</div>';
         }
@@ -96,7 +78,7 @@ if ($query->have_posts()) {
 $args = array('post_type' => 'ms-testimonial', 'posts_per_page' => -1);
 $query = new WP_Query($args);
 if ($query->have_posts()) {
-    echo '<div class="slider">';
+    echo '<div class="testimonial-slider slider">';
     while ($query->have_posts()) {
         echo '<div class="testimonial-slider">';
         $query->the_post();

@@ -5,8 +5,18 @@ h2.testimonials-title {
     text-align: center;
 }
 
+.testimonial-slider .slick-dots,
+.testimonial-slider {
+    background-color: rgb(240, 240, 240);
+}
+
 blockquote.wp-block-quote {
     width: 50%;
     height: 150px;
+    margin: auto;
+}
+
+.deal-slider {
+    width: 85%;
     margin: auto;
 }
