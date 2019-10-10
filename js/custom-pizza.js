@@ -35,18 +35,18 @@ let loadingFront = document.getElementById('loading-front');
 let loadingBack = document.getElementById('loading-back');
 
 loadingFront.style['position']  = 'absolute';
-loadingFront.style['left']     = '50%';
-loadingFront.style['top']      = '50%';
-loadingFront.style['transform']      = 'translate(-50%, -50%)';
-loadingFront.style['display']  = 'block';
+loadingFront.style['left']      = '50%';
+loadingFront.style['top']       = '50%';
+loadingFront.style['transform'] = 'translate(-50%, -50%)';
+loadingFront.style['display']   = 'block';
 loadingFront.style['width']     = pizzaWidth * 0.5 + 'px';
 loadingFront.style['height']    = pizzaWidth * 0.5 + 'px';
 
 loadingBack.style['position']  = 'absolute';
-loadingBack.style['left']     = '50%';
-loadingBack.style['top']      = '50%';
-loadingBack.style['transform']      = 'translate(-50%, -50%)';
-loadingBack.style['display']  = 'block';
+loadingBack.style['left']      = '50%';
+loadingBack.style['top']       = '50%';
+loadingBack.style['transform'] = 'translate(-50%, -50%)';
+loadingBack.style['display']   = 'block';
 loadingBack.style['width']     = pizzaWidth * 0.5 + 'px';
 loadingBack.style['height']    = pizzaWidth * 0.5 + 'px';
 
@@ -301,6 +301,7 @@ function addCrust(crustSrc) {
     crust.style['top']        = 0 + 'px';
     crust.style['z-index']    = 300;
     crust.style['overflow']   = 'hidden';
+    crust.style['max-width']  = '100%';
 
     document.getElementsByClassName('woocommerce-product-gallery__image')[0].appendChild(crust);
 }
