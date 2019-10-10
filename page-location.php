@@ -34,6 +34,25 @@ get_header();
 				// loop through the rows of data
 			while ( have_rows('map') ) : the_row();
 
+
+				echo '<h3>' . the_sub_field('location_title') . '</h3>';
+				echo '<p>' . the_sub_field('address') . '</p>';
+				echo '<p>' . the_sub_field('phone') . '</p>';
+				// the_sub_field('hours', );
+				if( have_rows('hours') ):
+					echo '<ul>';
+					while ( have_rows('hours') ) : the_row();
+						echo '<li>Mon: ' . get_sub_field('monday') . '</li>';
+						echo '<li>Tue: ' . get_sub_field('tuesday') . '</li>';
+						echo '<li>Wed: ' . get_sub_field('wednesday') . '</li>';
+						echo '<li>Thurs: ' . get_sub_field('thursday') . '</li>';
+						echo '<li>Fri: ' . get_sub_field('friday') . '</li>';
+						echo '<li>Sat: ' . get_sub_field('saturday') . '</li>';
+						echo '<li>Sun: ' . get_sub_field('sunday') . '</li>';
+					endwhile;
+					echo '</ul>';
+				endif;
+
 				// display a sub field value
 				$location = get_sub_field('map_site');
 			
