@@ -93,6 +93,38 @@ function ms_register_custom_post_types()
 }
 add_action('init', 'ms_register_custom_post_types');
 
+
+
+function register_acf_options_pages() {
+
+    // Check function exists.
+    if( !function_exists('acf_add_options_page') )
+        return;
+
+    // register options page.
+    $option_page = acf_add_options_page(array(
+        'page_title'    => __('Theme General Settings'),
+        'menu_title'    => __('Theme Settings'),
+        'menu_slug'     => 'theme-general-settings',
+        'capability'    => 'edit_posts',
+        'redirect'      => false
+    ));
+}
+
+// Hook into acf initialization.
+add_action('acf/init', 'register_acf_options_pages');
+
+
+
+
+
+
+
+
+
+
+
+
 function ms_rewrite_flush()
 {
     ms_register_custom_post_types();

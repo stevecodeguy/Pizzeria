@@ -25,6 +25,7 @@ get_header();
 
 <section class="front-slider">
 
+
 <?php
 
 $args = array('post_type' => 'ms-deals', 'posts_per_page' => -1);

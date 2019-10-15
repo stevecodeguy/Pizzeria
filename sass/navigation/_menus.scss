@@ -74,6 +74,27 @@
 	display: block;
 }
 
+// ---------------------------- main manu style ---------------------------- //
+
+.product-navigation .icon svg{
+	width:60px;
+	height: 60px;
+	
+}
+.product-navigation{
+	display: flex;
+	justify-content: space-between;
+	margin:0 auto;
+	width:85%;
+}
+.product-navigation h2{
+	color:rgb(92, 34, 34);
+		font-size: 1.3rem;
+}
+
+
+
+
 @media screen and (min-width: 37.5em) {
 	.menu-toggle {
 		display: none;
@@ -102,5 +123,52 @@
 		float: right;
 		text-align: right;
 		width: 50%;
+	}
+}
+@media screen and (min-width: 600px) {
+
+	.menu-main-menu-container ul{
+		margin:0 auto;
+		width:85%;
+		display:flex;
+		justify-content:space-between;
+	
+	}
+	.menu-main-menu-container li{
+		padding:10px;
+	}
+	.menu-main-menu-container a{
+		color: rgb(67, 67, 67);
+		font-weight: bold;
+		font-size: 1.2rem;	
+	}
+	
+
+	.menu-main-menu-container a:hover{
+		color:rgb(92, 34, 34);
+		font-size: 1.3rem;
+		transition: opacity 0.35s, transform 0.35s;
+    	// -webkit-transform: scale(0, 1);
+    	// transform: scale(0, 1);	
+	}
+	.menu-main-menu-container a:before{
+		content: '';
+		position: absolute;
+		right:1px;
+		display: inline-block;
+		height: 1em;
+		width: 100%;
+		border-bottom:2px solid rgb(99, 39, 39);
+		margin-top: 10px;
+		opacity: 0;
+		-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+		transition: opacity 0.35s, transform 0.35s;
+		-webkit-transform: scale(0, 1);
+		transform: scale(0, 1);
+	}
+	.menu-main-menu-container a:hover:before{
+		opacity: 1;
+		-webkit-transform: scale(1);
+		transform: scale(1);
 	}
 }
