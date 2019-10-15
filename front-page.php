@@ -55,10 +55,19 @@ if ($query->have_posts()) {
 </section>
 
 
+<!------------------------------------------ Random Product -------------------------------------->
+
+<div class="home-related-products">
+    <h2>Popular products</h2>
+<?php echo do_shortcode('[products limit="3" columns="3" orderby="popularity"]'); ?>
+</div>
+
+
 <!------------------------------------------ Instagram Feed -------------------------------------->
 
+<div class="instagram">
     <?php echo do_shortcode('[instagram-feed]'); ?>
-
+    </div>
 
 <!------------------------------------------ Testimonials Slider -------------------------------------->
 

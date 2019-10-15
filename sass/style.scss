@@ -44,7 +44,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 --------------------------------------------------------------*/
 @import "variables-site/variables-site";
 @import "mixins/mixins-master";
-@import url('https://fonts.googleapis.com/css?family=Great+Vibes|Raleway:300,400,500,600,700|Roboto:300,400,500,700,900&display=swap');
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -117,3 +116,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "slider";
 @import "about/about";
 @import "deals/deals";
+
+/*--------------------------------------------------------------
+# Pages
+--------------------------------------------------------------*/
+@import "customizer_page/customizer_page";
+@import "home";

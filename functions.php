@@ -126,6 +126,8 @@ add_action('after_setup_theme', 'lmpizza_content_width', 0);
  */
 function lmpizza_scripts()
 {
+    wp_enqueue_style('lmpizza-font', 'https://fonts.googleapis.com/css?family=Great+Vibes|Raleway:300,400,500,600,700|Roboto:300,400,500,700,900&display=swap');
+
     wp_enqueue_style('lmpizza-style', get_stylesheet_uri());
 
     wp_enqueue_script('lmpizza-map', get_template_directory_uri() . '/js/map.js', array('jquery'), '20190923', true);
