@@ -45,6 +45,11 @@
     margin-bottom: 10%;
  }
 
+.about-banner img{
+    width: 800px;
+    height: 300px;
+}
+
 @media only screen and (min-width: 650px) {
     .about-family-contain-1 ul{
        display: flex;
