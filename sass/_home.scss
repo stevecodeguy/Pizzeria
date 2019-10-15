@@ -1,0 +1,13 @@
+.home-related-products .woocommerce ul.products li.product .price,
+.home-related-products ul.products li.product .button {
+    display: none;
+}
+
+.home-related-products {
+    text-align: center;
+}
+
+div.columns-3 {
+    display: flex;
+    justify-content: space-around;
+}
