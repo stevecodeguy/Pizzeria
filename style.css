@@ -446,15 +446,17 @@ blockquote.wp-block-quote { width: 50%; margin: auto; }
 @media only screen and (min-width: 850px) { .entry-content p { max-width: 70%; margin: 0 auto; padding-bottom: 20px; }
 	.about-family-info-wrapper ul { line-height: 1.5; } }
 
-@media only screen and (min-width: 850px) and (min-width: 650px) { .about-family-info-wrapper ul .about-family-contain-1 ul { display: flex; justify-content: space-between; margin-bottom: 10%; }
-	.about-family-info-wrapper ul .about-family-info-wrapper li { width: 50%; }
-	.about-family-info-wrapper ul .about-family-text-2 { display: block; }
-	.about-family-info-wrapper ul .about-family-text-3 { display: none; } }
+@media only screen and (min-width: 650px) { .about-family-info-wrapper li { width: 100%; margin: 0 auto; }
+	.about-family-info-wrapper .about-family-contain-1 .about-family-img-1 img { padding: 20px; }
+	.about-family-info-wrapper .about-family-contain-2 .about-family-img-2 img { padding: 20px; } }
 
-@media only screen and (min-width: 850px) and (min-width: 1059px) { .about-family-info-wrapper ul .about-family-contain-1 .about-family-text-1 { margin-top: 20px; }
-	.about-family-info-wrapper ul .about-family-contain-2 .about-family-text-2 { margin-top: 20px; } }
-
-@media only screen and (min-width: 850px) and (min-width: 1200px) { .about-family-info-wrapper ul .about-family-info-wrapper { width: 70%; margin: 0 auto; } }
+@media only screen and (min-width: 1059px) { .about-family-info-wrapper { width: 100%; margin: 0 auto; }
+	.about-family-contain-1 { display: flex; justify-content: space-between; }
+	.about-family-text-2 { display: block; }
+	.about-family-text-3 { display: none; }
+	.about-family-contain-2 { display: flex; }
+	.about-family-info-wrapper .about-family-contain-1 .about-family-text-1 { line-height: 1.6; padding: 20px; }
+	.about-family-contain-2 .about-family-text-2 { line-height: 1.6; } }
 
 .deals-container { display: flex; flex-wrap: wrap; padding: 20px; justify-content: space-between; max-width: 80%; }
 
