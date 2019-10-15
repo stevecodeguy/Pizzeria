@@ -64,8 +64,9 @@ if ($query->have_posts()) {
 
 <!------------------------------------------ Instagram Feed -------------------------------------->
 
+<div class="instagram">
     <?php echo do_shortcode('[instagram-feed]'); ?>
-
+    </div>
 
 <!------------------------------------------ Testimonials Slider -------------------------------------->
 
