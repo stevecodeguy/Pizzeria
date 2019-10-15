@@ -398,16 +398,6 @@ embed, iframe, object { max-width: 100%; }
 
 .custom-logo { width: 100px; height: 100px; }
 
-.menu-sub-menu-container ul { display: flex; justify-content: space-evenly; }
-
-.drink-icon { background-image: url("images/drink-icon.png"); background-repeat: no-repeat; background-size: contain; width: 60px; height: 60px; }
-
-.dessert-icon { background-image: url("images/dessert-icon.png"); background-repeat: no-repeat; background-size: contain; width: 60px; height: 60px; }
-
-.salad-icon { background-image: url("images/salad-icon.png"); background-repeat: no-repeat; background-size: contain; width: 60px; height: 60px; }
-
-.deals-icon { background-image: url("images/gift-card.png"); background-repeat: no-repeat; background-size: contain; width: 60px; height: 60px; }
-
 #social-navigation .menu-social-menu-container { background-color: #83243c; }
 
 ul#social-menu.menu { list-style: none; width: 40%; margin: auto; display: flex; justify-content: space-between; padding: 50px; }
@@ -428,14 +418,14 @@ h2.testimonials-title { background-color: #f0f0f0; margin: 0; padding: 30px 0 10
 
 .testimonial-slider .slick-dots, .testimonial-slider { background-color: #f0f0f0; }
 
-blockquote.wp-block-quote { width: 50%; height: 150px; margin: auto; }
+blockquote.wp-block-quote { width: 50%; margin: auto; }
 
 .deal-slider { width: 85%; margin: auto; }
 
 /*--------------------------------------------------------------
 ## About Family
 --------------------------------------------------------------*/
-.content-area { width: 80%; margin: 0 auto; text-align: center; font-family: 'Raleway','Roboto'; }
+.page-about { width: 80%; margin: 0 auto; text-align: center; font-family: 'Raleway', 'Roboto'; }
 
 .content-area .entry-title { font-size: 4rem; }
 
@@ -454,15 +444,17 @@ blockquote.wp-block-quote { width: 50%; height: 150px; margin: auto; }
 .about-family-contain-2 { margin-bottom: 10%; }
 
 @media only screen and (min-width: 850px) { .entry-content p { max-width: 70%; margin: 0 auto; padding-bottom: 20px; }
-	.about-family-info-wrapper ul { line-height: 1.5; display: flex; justify-content: space-between; margin-bottom: 10%; }
-	.about-family-info-wrapper li { width: 50%; }
-	.about-family-text-2 { display: block; }
-	.about-family-text-3 { display: none; } }
+	.about-family-info-wrapper ul { line-height: 1.5; } }
 
-@media only screen and (min-width: 1059px) { .about-family-contain-1 .about-family-text-1 { margin-top: 20px; }
-	.about-family-contain-2 .about-family-text-2 { margin-top: 20px; } }
+@media only screen and (min-width: 850px) and (min-width: 650px) { .about-family-info-wrapper ul .about-family-contain-1 ul { display: flex; justify-content: space-between; margin-bottom: 10%; }
+	.about-family-info-wrapper ul .about-family-info-wrapper li { width: 50%; }
+	.about-family-info-wrapper ul .about-family-text-2 { display: block; }
+	.about-family-info-wrapper ul .about-family-text-3 { display: none; } }
 
-@media only screen and (min-width: 1200px) { .about-family-info-wrapper { width: 70%; margin: 0 auto; } }
+@media only screen and (min-width: 850px) and (min-width: 1059px) { .about-family-info-wrapper ul .about-family-contain-1 .about-family-text-1 { margin-top: 20px; }
+	.about-family-info-wrapper ul .about-family-contain-2 .about-family-text-2 { margin-top: 20px; } }
+
+@media only screen and (min-width: 850px) and (min-width: 1200px) { .about-family-info-wrapper ul .about-family-info-wrapper { width: 70%; margin: 0 auto; } }
 
 .deals-container { display: flex; flex-wrap: wrap; padding: 20px; justify-content: space-between; max-width: 80%; }
 
