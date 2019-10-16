@@ -26,8 +26,9 @@
 
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
-
+		<?php do_action('apply_header_images'); ?>
 			<?php
+			
 if (function_exists('the_custom_logo')) {
     the_custom_logo();
 }
@@ -50,21 +51,62 @@ if ($lmpizza_description || is_customize_preview()):
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e('Primary Menu', 'lmpizza');?></button>
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+				<?php esc_html_e('Menu', 'lmpizza');?>
+			</button>
 			<?php
-wp_nav_menu(array(
-    'theme_location' => 'menu-1',
-    'menu_id' => 'primary-menu',
-));
-?>
+			wp_nav_menu(array(
+				'theme_location' => 'menu-1',
+				'menu_id' => 'primary-menu',
+			));
+			?>
 		</nav><!-- #site-navigation -->
 
 		<nav id="product-navigation" class="product-navigation">
 			<?php
-wp_nav_menu(array(
-    'theme_location' => 'menu-2',
-    'menu_id' => 'secondary-menu',
-));
+			
+
+				// check if the repeater field has rows of data
+				if( have_rows('product_menu','options') ):
+			
+					 // loop through the rows of data
+					while ( have_rows('product_menu','options') ) : the_row();
+						// display a sub field value
+					
+								
+					
+						if(get_sub_field('icon') ): ?>
+						
+						
+					<div class="icon-wrapper">
+						<?php $term = get_sub_field('link');//check taxonomy link
+								if($term):?>
+									<a href="<?php echo get_term_link($term->term_id, 'product_cat')?>">
+									
+								 <?php elseif(get_sub_field('link-2')):?><!-- if it's not taxonomy then check page link -->
+									<a href= " <?php the_sub_field('link-2') ?>">
+								<?php else:?>
+									<a href="#">
+								<?php endif; ?>
+						
+						<div class="icon">
+							<?php the_sub_field('icon')?></a>					
+						</div>
+					</div>
+				<?php
+					 endif;
+								
+					endwhile;
+					
+				else :
+				
+					// no rows found
+				
+				endif;
+			
+			
+
+
 ?>
 		</nav><!-- #site-navigation -->
 

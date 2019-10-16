@@ -25,6 +25,7 @@ get_header();
 
 <section class="front-slider">
 
+
 <?php
 
 $args = array('post_type' => 'ms-deals', 'posts_per_page' => -1);
@@ -64,8 +65,9 @@ if ($query->have_posts()) {
 
 <!------------------------------------------ Instagram Feed -------------------------------------->
 
+<div class="instagram">
     <?php echo do_shortcode('[instagram-feed]'); ?>
-
+    </div>
 
 <!------------------------------------------ Testimonials Slider -------------------------------------->
 

@@ -13,7 +13,7 @@
 
 		ul {
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-			float: left;
+			// float: left;
 			position: absolute;
 			top: 100%;
 			left: -999em;
@@ -50,7 +50,7 @@
 	}
 
 	li {
-		float: left;
+		// float: left;
 		position: relative;
 
 		&:hover>a,
@@ -73,6 +73,80 @@
 .main-navigation.toggled ul {
 	display: block;
 }
+
+// ---------------------------- main menu style ---------------------------- //
+
+
+.menu-main-menu-container a{
+	padding:20px;
+	text-align: center;
+	color: rgb(67, 67, 67);
+	font-weight: bold;
+	font-size: 1.2rem;	
+}
+
+
+.menu-main-menu-container a:hover{
+	color:rgb(92, 34, 34);
+	font-size: 1.3rem;
+	transition: opacity 0.35s, transform 0.35s;
+	// -webkit-transform: scale(0, 1);
+	// transform: scale(0, 1);	
+}
+.menu-main-menu-container a:before{
+	content: '';
+	position: absolute;
+	right:1px;
+	display: inline-block;
+	height: 1em;
+	width: 20%;
+	margin-right:40%;
+	border-bottom:2px solid rgb(99, 39, 39);
+	margin-top:20px;
+	opacity: 0;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: scale(0, 1);
+	transform: scale(0, 1);
+}
+.menu-main-menu-container a:hover:before{
+	opacity: 1;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+
+.menu-toggle{
+	font-family: 'Great Vibes';
+	font-weight: bold;
+	background-color: white;
+	border:none;
+	font-size: 1.6rem;
+}
+.menu-toggle:hover{
+	color: rgb(128, 39, 39);
+	font-size: 1.8rem;
+}
+
+
+
+// ---------------------------- sub menu style ---------------------------- //
+.product-navigation .icon svg{
+	width:40px;
+	height: 40px;
+	
+}
+.product-navigation{
+	display: flex;
+	justify-content: space-between;
+	margin:0 auto;
+	width:80%;
+}
+
+
+.product-navigation .icon svg:hover{
+	padding:5px;
+}
+
 
 @media screen and (min-width: 37.5em) {
 	.menu-toggle {
@@ -102,5 +176,75 @@
 		float: right;
 		text-align: right;
 		width: 50%;
+	}
+}
+@media screen and (min-width: 600px) {
+
+	.menu-main-menu-container ul{
+		margin: 0 auto;
+		width: 85%;
+		justify-content: space-between;
+	}
+	.main-navigation ul{
+		display: flex;
+	}
+	.main-navigation li{
+		display: flex;
+	}
+
+	// .menu-main-menu-container ul{
+	// 	margin:0 auto;
+	// 	width:85%;
+	// 	// display:flex;
+	
+	
+	// }
+	.menu-main-menu-container li{
+		padding:10px;
+	}
+	.product-navigation .icon svg{
+		min-width:50px;
+		height: 50px;	
+	}
+	.menu-main-menu-container a{
+		color: rgb(67, 67, 67);
+		font-weight: bold;
+		font-size: 1.2rem;	
+	}
+	
+
+	.menu-main-menu-container a:hover{
+		color:rgb(92, 34, 34);
+		font-size: 1.3rem;
+		transition: opacity 0.35s, transform 0.35s;
+    	// -webkit-transform: scale(0, 1);
+    	// transform: scale(0, 1);	
+	}
+	.menu-main-menu-container a:before{
+		content: '';
+		position: absolute;
+		right:1px;
+		display: inline-block;
+		height: 1em;
+		width: 100%;
+		border-bottom:2px solid rgb(99, 39, 39);
+		margin-right:0;
+		margin-top: 10px;
+		opacity: 0;
+		-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+		transition: opacity 0.35s, transform 0.35s;
+		-webkit-transform: scale(0, 1);
+		transform: scale(0, 1);
+	}
+	.menu-main-menu-container a:hover:before{
+		opacity: 1;
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+}
+@media screen and (min-width: 1000px) {
+	.product-navigation .icon svg{
+		min-width:60px;
+		height: 60px;	
 	}
 }
