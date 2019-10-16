@@ -474,6 +474,42 @@ blockquote.wp-block-quote { width: 50%; height: 150px; margin: auto; }
 /*--------------------------------------------------------------
 # Pages
 --------------------------------------------------------------*/
+h1.product_title.entry-title, p.price, table.variations tbody { text-align: center; }
+
+td.label { text-align: right; }
+
+body.single-product { margin: 0 auto; }
+
+div.wc-pao-addon-container > label.wc-pao-addon-name { font-weight: 900; }
+
+div.product_meta { display: none; }
+
+div.single_variation_wrap div.single_variation { grid-column-start: 1; grid-column-end: 3; }
+
+#content { margin: 0 15px; }
+
+div.single_variation_wrap div.single_variation div.woocommerce-variation-price { text-align: center; }
+
+div.wc-tabs-wrapper { display: none; }
+
+div.wc-pao-addon-container > label.wc-pao-addon-name .form-row::before label { font-weight: 300; }
+
+#main div.product div.entry-summary .variations_form .single_variation_wrap { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 2; grid-row-gap: 8px; grid-column-gap: 8px; }
+
+#content #secondary { display: none; }
+
+.single_variation_wrap div.wc-pao-addon-sauce { grid-column-start: 1; height: 70px; }
+
+.single_variation_wrap div.wc-pao-addon-cheese { grid-column-start: 2; height: 70px; }
+
+#content #productsss-103 { margin: 0 auto; }
+
+.woocommerce #content div.product div.images, .woocommerce div.product div.images, .woocommerce-page #content div.product div.images, .woocommerce-page div.product div.images, .woocommerce #content div.product div.summary, .woocommerce div.product div.summary, .woocommerce-page #content div.product div.summary, .woocommerce-page div.product div.summary { clear: both; float: none; }
+
+.woocommerce #content div.product div.summary, .woocommerce div.product div.summary, .woocommerce-page #content div.product div.summary, .woocommerce-page div.product div.entry-summary { width: 100%; }
+
+#content #productsss-103 .woocommerce-product-gallery--with-images { clear: left; margin: 0 auto; }
+
 .home-related-products .woocommerce ul.products li.product .price, .home-related-products ul.products li.product .button { display: none; }
 
 .home-related-products { text-align: center; }
