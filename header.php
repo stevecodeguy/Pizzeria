@@ -26,8 +26,9 @@
 
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
-
+		<?php do_action('apply_header_images'); ?>
 			<?php
+			
 if (function_exists('the_custom_logo')) {
     the_custom_logo();
 }
@@ -61,10 +62,42 @@ wp_nav_menu(array(
 
 		<nav id="product-navigation" class="product-navigation">
 			<?php
-wp_nav_menu(array(
-    'theme_location' => 'menu-2',
-    'menu_id' => 'secondary-menu',
-));
+			
+
+				// check if the repeater field has rows of data
+				if( have_rows('product_menu','options') ):
+			
+					 // loop through the rows of data
+					while ( have_rows('product_menu','options') ) : the_row();
+						// display a sub field value
+					
+								
+					$term = get_sub_field('link');
+						if( $term && get_sub_field('icon') ): ?>
+						
+						
+					<div class="icon-wrapper">
+						
+						<a href="<?php echo get_term_link($term->term_id, 'product_cat')?>">
+						<div class="icon">
+						<?php the_sub_field('icon')?></a>
+						<h2><?php echo $term->name; ?></h2>
+						</div>
+					</div>
+				<?php
+					 endif;
+								
+					endwhile;
+					
+				else :
+				
+					// no rows found
+				
+				endif;
+			
+			
+
+
 ?>
 		</nav><!-- #site-navigation -->
 

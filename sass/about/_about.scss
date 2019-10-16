@@ -1,53 +1,113 @@
 /*--------------------------------------------------------------
 ## About Family
 --------------------------------------------------------------*/
-.entry-header
-.entry-content{
-    max-width: 100%;
+
+.page-about {
+    width: 80%;
+    margin: 0 auto;
     text-align: center;
-    font-family: 'Raleway','Roboto';
+    font-family: 'Raleway', 'Roboto';
 }
 
-.wp-block-cover .wp-block-cover__inner-container p{
+.content-area .entry-title {
+    font-size: 4rem;
+}
+
+.wp-block-cover .wp-block-cover__inner-container p {
     font-family: "Great Vibes";
     color: rgba(255, 255, 255, 0.897);
     font-size: 3rem;
-
-}
-.entry-content h2{
-    font-family: "Great Vibes";
-    color: rgba(65, 64, 64, 0.897);
-    font-size: 2rem;
 }
 
-.about-family-info-wrapper{
-    align-items: center;
-    margin:0 auto;
+
+.about-family-info-wrapper {
+    margin-bottom: 10%;
+    text-align: center;
 }
 
-.about-family-info-wrapper{
-   margin-bottom:10%;
-}
-.about-family-info-wrapper ul{
+.about-family-info-wrapper ul {
     padding: 0;
     margin: 0;
- }
-.about-family-info-wrapper li{
+}
+
+.about-family-info-wrapper li {
     list-style: none;
-    padding: 0;
-    margin-left:0;
- }
+    padding: 20px;
+    margin-left: 0;
+}
 
- .about-family-text{
-     text-align: center;
- }
-.about-family-contain-2{
+.about-family-text-2 {
+    display: none;
+}
+
+.about-family-contain-1 .about-family-img-1 {
+    padding-bottom: 20px;
+}
+
+.about-family-contain-2 {
     margin-bottom: 10%;
- }
+}
 
+@media only screen and (min-width: 850px) {
+    .entry-content p {
+        max-width: 70%;
+        margin: 0 auto;
+        padding-bottom: 20px;
+    }
 
-@media only screen and (min-width: 650px) {
-    .about-family-contain-1 ul{
-       display: flex;
+    .about-family-info-wrapper ul {
+        line-height: 1.5;
     }
 }
+
+        @media only screen and (min-width: 650px) {
+           
+            .about-family-info-wrapper li {
+                width: 100%;
+                margin: 0 auto;
+            }
+
+            .about-family-info-wrapper .about-family-contain-1 .about-family-img-1 img  {
+                padding:20px;
+                
+            }
+            .about-family-info-wrapper .about-family-contain-2 .about-family-img-2 img  {
+                padding:20px;
+            }
+        }
+
+        @media only screen and (min-width: 1059px) {
+            .about-family-info-wrapper {
+                width: 100%;
+                margin: 0 auto;
+            }
+            .about-family-contain-1 {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .about-family-text-2 {
+                display: block;
+            }
+
+            .about-family-text-3 {
+                display: none;
+            }
+            .about-family-contain-2 {
+                display: flex;
+            }
+           
+            .about-family-info-wrapper .about-family-contain-1 .about-family-text-1{
+                line-height: 1.6;
+                padding:20px;
+            }
+
+            .about-family-contain-2 .about-family-text-2 {
+                line-height: 1.6;
+            }
+        }
+
+        @media only screen and (min-width: 1200px) {
+            
+        }
+    

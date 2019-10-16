@@ -16,7 +16,7 @@ get_header();
 ?>
 	<!-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script> -->
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area page-about">
 		<main id="main" class="site-main">
 
 		<?php
@@ -37,42 +37,56 @@ echo "<div class='about-family-info-wrapper'>";
 
 echo "<ul class='about-family-contain-1'>";
 
-if (function_exists('get_field')){
-    if(get_field('about_family_images_1')){
+if (function_exists('get_field')) {
+    if (get_field('about_family_images_1')) {
         echo "<li class='about-family-img-1'>";
-            echo wp_get_attachment_image(get_field('about_family_images_1'), 'large', '', array("class" => "alignleft"));
-        echo"</li>"; 
-    };
-};
-if(function_exists('get_field')){
-    if(get_field('about_family_text_1')){
-        echo "<li class='about-family-text'>";
-            the_field('about_family_text_1');
-        echo"</li>";
+        echo wp_get_attachment_image(get_field('about_family_images_1'), 'medium', '', array("class" => "alignleft"));
+        echo "</li>";
+    }
+    ;
+}
+;
+if (function_exists('get_field')) {
+    if (get_field('about_family_text_1')) {
+        echo "<li class='about-family-text-1'>";
+        the_field('about_family_text_1');
+        echo "</li>";
     }
 }
-echo"</ul>";// end about-family-contain-1
-
+echo "</ul>"; // end about-family-contain-1
 
 echo "<ul class='about-family-contain-2'>";
+if (function_exists('get_field')) {
+    if (get_field('about_family_text_2')) {
+        echo "<li class='about-family-text-2'>";
+        the_field('about_family_text_2');
+        echo "</li>";
+    }
+    ;
+}
+;
 
-if (function_exists('get_field')){
-    if(get_field('about_family_images_2')){ 
+if (function_exists('get_field')) {
+    if (get_field('about_family_images_2')) {
         echo "<li class='about-family-img-2'>";
-            echo wp_get_attachment_image(get_field('about_family_images_2'), 'large', '', array("class" => "alignright"));
-        echo"</li>"; 
-    };
-};
-if(function_exists('get_field')){
-    if(get_field('about_family_text_2')){
-        echo "<li class='about-family-text'>"; 
-            the_field('about_family_text_2');
-         echo"</li>";
+        echo wp_get_attachment_image(get_field('about_family_images_2'), 'medium', '', array("class" => "alignright"));
+        echo "</li>";
+    }
+    ;
+}
+;
+
+if (function_exists('get_field')) {
+    if (get_field('about_family_text_2')) {
+        echo "<li class='about-family-text-3'>";
+        the_field('about_family_text_2');
+        echo "</li>";
     }
 }
-echo"</ul>";// end about-family-contain-2
 
-echo"</div>";// end image wrapper
+echo "</ul>"; // end about-family-contain-2
+
+echo "</div>"; // end image wrapper
 
 ?>
 
