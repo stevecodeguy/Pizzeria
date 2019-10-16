@@ -3,8 +3,14 @@
     display: none;
 }
 
+.woocommerce .products ul,
+.woocommerce ul.products {
+    margin: 0;
+}
+
 .home-related-products {
     text-align: center;
+    margin-top: 50px;
 }
 
 div.columns-3 {

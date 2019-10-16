@@ -58,7 +58,7 @@ if ($query->have_posts()) {
 <!------------------------------------------ Random Product -------------------------------------->
 
 <div class="home-related-products">
-    <h2>Popular products</h2>
+    <h2 class="popular-products">Popular products</h2>
 <?php echo do_shortcode('[products limit="3" columns="3" orderby="popularity"]'); ?>
 </div>
 
