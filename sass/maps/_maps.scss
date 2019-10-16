@@ -12,6 +12,45 @@
 .acf-map img {
     max-width: inherit !important;
 }
-.post-29 {
-text-align: center;
+.site-main .post-29 {
+    text-align: center;  
+}
+.location-information-wrapper{
+  text-align: center;  
+}
+.location-information-wrapper h3{
+    font-size: 1.6rem;
+}
+.open-hour-wrapper{
+    text-align: center;  
+}
+.open-hour-wrapper ul{
+list-style: none;
+margin-left:0;
+padding-left:0;
+}
+.acf-map:last-child{
+    margin-bottom: 20px;
+}
+
+@media screen and (min-width: 900px) {
+    .acf-map{
+        width: 80%;
+        margin:0 auto;
+        padding:20px;
+    }
+    .location-wrapper{
+        text-align-last: left;
+        width: 80%;
+        display: flex;
+        padding:40px;
+       justify-content: space-between;
+       margin:0 auto;
+    }
+    .location-wrapper .location-information-wrapper{
+        width: 50%;
+    }
+    .open-hour-wrapper li{
+        padding:5px;
+    }
 }
