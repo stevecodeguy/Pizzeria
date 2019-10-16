@@ -109,14 +109,9 @@
     content: '←';
 }
 
-/* Dots */
-.slick-dotted.slick-slider {
-    margin-bottom: 30px;
-}
-
 .slick-dots {
     position: absolute;
-    bottom: -25px;
+    bottom: -50px;
 
     display: block;
 

@@ -98,3 +98,6 @@ node_modules/
 *.swp
 *.vi
 *~
+style.css
+style.css.map
+

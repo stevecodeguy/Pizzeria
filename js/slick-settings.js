@@ -8,16 +8,8 @@ jQuery(document).ready(function ($) {
         autoplay: true,
         autoplaySpeed: 4000, // speed is in milliseconds
         speed: 300,
-        responsive: [{
-            breakpoint: 768,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-            }
-        }, {
-            breakpoint: 600,
-            settings: "unslick"
-        }]
+        arrows: false,
+
     });
 
 });

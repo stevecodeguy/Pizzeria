@@ -1,46 +1,18 @@
 .custom-logo {
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
 }
 
-// .menu-sub-menu-container ul{
-//     display: flex;
-//     justify-content: space-evenly;
+@media (min-width: 600px) {
+    .custom-logo {
+        width: 75px;
+        height: 75px;
+    }
+}
 
-
-// }
-// .pizza-icon{
-//     background-image: url("images/pizza-icon.png");
-//     background-repeat: no-repeat;
-//     background-size:contain;
-//     width: 60px;
-//     height: 60px;
-// }
-// .drink-icon{
-//     background-image: url("images/drink-icon.png");
-//     background-repeat: no-repeat;
-//     background-size:contain;
-//     width: 60px;
-//     height: 60px;
-// }
-// .dessert-icon{
-//     background-image: url("images/dessert-icon.png");
-//     background-repeat: no-repeat;
-//     background-size:contain;
-//     width: 60px;
-//     height: 60px;
-// }
-// .salad-icon{
-//     background-image: url("images/salad-icon.png");
-//     background-repeat: no-repeat;
-//     background-size:contain;
-//     width: 60px;
-//     height: 60px;
-// }
-// .deals-icon{
-//     background-image: url("images/gift-card.png");
-//     background-repeat: no-repeat;
-//     background-size:contain;
-//     width: 60px;
-//     height: 60px;
-// }
+@media (min-width: 900px) {
+    .custom-logo {
+        width: 100px;
+        height: 100px;
+    }
+}
