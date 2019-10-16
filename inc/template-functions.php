@@ -144,8 +144,7 @@ function remove_menus()
                             __('Plugins'),
                             __('Users'),
                             __('Tools'),
-                            __('Settings'),
-                            __('Admin')
+                            __('Settings')
         );
         end ($menu);
         while (prev($menu)){
