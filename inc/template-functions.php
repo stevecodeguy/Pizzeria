@@ -81,54 +81,17 @@ function lmpizza_login_logo_url_title() {
 add_filter( 'login_headertitle', 'lmpizza_login_logo_url_title' );
 
 
-
-
-// add_action( 'after_setup_theme', 'relaunch_content_width', 0 );
-//has to be under action hook
-//ReNAME dashboard Menu ITEMS
-
-function edit_admin_menus() {
-    global $menu;
-    global $submenu;
-    
-    // $menu[5][0] = 'Recipes'; // Change Posts to Recipes
-    // $submenu['edit.php'][5][0] = 'All Recipes';
-    // $submenu['edit.php'][10][0] = 'Add a Recipe';
-    // $submenu['edit.php'][15][0] = 'Meal Types'; // Rename categories to meal types
-	// $submenu['edit.php'][16][0] = 'Ingredients'; // Rename tags to ingredients
-
-	//Removing
-	// remove_menu_page('edit.php?post_type=acf-field-group'); // Remove the plugin acf 
+//Remove menus in back end
+function lmpizza_edit_admin_menus() {
 	remove_menu_page('edit.php'); // Remove Posts
 	remove_menu_page('edit-comments.php'); // Remove Comments
     remove_submenu_page('themes.php','theme-editor.php');
 }
-add_action( 'admin_menu', 'edit_admin_menus' );
-
-//Activate Custom menu order & The order of the menus is top to bottom!
-// function custom_menu_order($menu_ord) {
-// 	if (!$menu_ord) return true;
-// 	return array(
-// 		'index.php', // Dashboard
-// 		'edit.php', // Posts
-// 		'upload.php', // Media
-// 		'link-manager.php', // Links
-// 		'edit.php?post_type=page', // Pages
-// 		'edit-comments.php', // Comments
-// 		'themes.php', // Appearance
-// 		'plugins.php', // Plugins
-// 		'users.php', // Users
-// 		'tools.php', // Tools
-// 		'options-general.php', // Settings
-		
-// 	);
-// }
-// add_filter('custom_menu_order', 'custom_menu_order');
-// add_filter('menu_order', 'custom_menu_order');
+add_action( 'admin_menu', 'lmpizza_edit_admin_menus' );
 
 //RESTRICTED FOR specific USERS
 
-function remove_menus()
+function lmpizza_remove_menus()
 {
     global $menu;
     global $current_user;
@@ -154,4 +117,49 @@ function remove_menus()
  
     }// end if
 }
-add_action('admin_menu', 'remove_menus');
+add_action('admin_menu', 'lmpizza_remove_menus');
+
+/**
+ * custom dashboard widget added
+ */
+function lmpizza_custom_dashboard_widget() {
+	echo "<p>Welcome to the back end of La Migliore. Please find instructions below on how to use this site:</p>";
+}
+
+function lmpizza_add_custom_dashboard_widget() {
+	wp_add_dashboard_widget('lmpizza_custom_dashboard_widget', 'How to Use - Instructional', 'lmpizza_custom_dashboard_widget');
+}
+add_action('wp_dashboard_setup', 'lmpizza_add_custom_dashboard_widget');
+
+
+// disable default dashboard widgets
+function lmpizza_disable_default_dashboard_widgets() {
+ 
+	//remove_meta_box('dashboard_right_now', 'dashboard', 'core');
+	remove_meta_box('dashboard_activity', 'dashboard', 'core');
+	remove_meta_box('dashboard_recent_comments', 'dashboard', 'core');
+	remove_meta_box('dashboard_incoming_links', 'dashboard', 'core');
+	remove_meta_box('dashboard_plugins', 'dashboard', 'core');
+ 
+	remove_meta_box('dashboard_quick_press', 'dashboard', 'core');
+	remove_meta_box('dashboard_recent_drafts', 'dashboard', 'core');
+	remove_meta_box('dashboard_primary', 'dashboard', 'core');
+	remove_meta_box('dashboard_secondary', 'dashboard', 'core');
+}
+add_action('admin_menu', 'lmpizza_disable_default_dashboard_widgets');
+
+function lmpizza_remove_metabox() {
+	remove_meta_box( 'wpseo-dashboard-overview', 'dashboard', 'side' );
+}
+add_action( 'wp_dashboard_setup', 'lmpizza_remove_metabox' );
+
+//Change greeting
+function lmpizza_replace_wordpress_howdy( $wp_admin_bar ) {
+	$my_account = $wp_admin_bar->get_node('my-account');
+	$newtext = str_replace( 'Howdy,', 'Greetings Pizza Hero, ',  $my_account->title );
+	$wp_admin_bar->add_node( array(
+		'id' => 'my-account',
+		'title' => $newtext,
+	) );
+}
+add_filter( 'admin_bar_menu', 'lmpizza_replace_wordpress_howdy', 25 );
