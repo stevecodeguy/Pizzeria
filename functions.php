@@ -219,15 +219,29 @@ function my_remove_lightbox()
 }
 add_action('init', 'my_remove_lightbox');
 
-function my_acf_init()
-{
-    acf_update_setting('google_api_key', 'AIzaSyAp6PoLDNvrN3WlJh9qsKwGJyrsPuTPhZo');
-}
-add_action('acf/init', 'my_acf_init');
-
 
 if( function_exists('acf_add_options_page') ) {
-	
-	acf_add_options_page();
-	
+	function my_acf_init()
+    {
+        acf_update_setting('google_api_key', 'AIzaSyAp6PoLDNvrN3WlJh9qsKwGJyrsPuTPhZo');
+    }
+    add_action('acf/init', 'my_acf_init');
+        
+    acf_add_options_page();
+
+    function register_acf_options_pages() {
+
+        // register options page.
+        $option_page = acf_add_options_page(array(
+            'page_title'    => __('Theme General Settings'),
+            'menu_title'    => __('Theme Settings'),
+            'menu_slug'     => 'theme-general-settings',
+            'capability'    => 'edit_posts',
+            'redirect'      => false
+        ));
+    }
+    
+    // Hook into acf initialization.
+    add_action('acf/init', 'register_acf_options_pages');
 }
+
