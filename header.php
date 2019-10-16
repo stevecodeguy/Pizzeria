@@ -51,7 +51,7 @@ if ($lmpizza_description || is_customize_preview()):
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e('Primary Menu', 'lmpizza');?></button>
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e('Menu', 'lmpizza');?></button>
 			<?php
 wp_nav_menu(array(
     'theme_location' => 'menu-1',
@@ -72,16 +72,23 @@ wp_nav_menu(array(
 						// display a sub field value
 					
 								
-					$term = get_sub_field('link');
-						if( $term && get_sub_field('icon') ): ?>
+					
+						if(get_sub_field('icon') ): ?>
 						
 						
 					<div class="icon-wrapper">
+						<?php $term = get_sub_field('link');//check taxonomy link
+								if($term):?>
+									<a href="<?php echo get_term_link($term->term_id, 'product_cat')?>">
+									
+								 <?php elseif(get_sub_field('link-2')):?><!-- if it's not taxonomy then check page link -->
+									<a href= " <?php the_sub_field('link-2') ?>">
+								<?php else:?>
+									<a href="#">
+								<?php endif; ?>
 						
-						<a href="<?php echo get_term_link($term->term_id, 'product_cat')?>">
 						<div class="icon">
-						<?php the_sub_field('icon')?></a>
-						<h2><?php echo $term->name; ?></h2>
+							<?php the_sub_field('icon')?></a>					
 						</div>
 					</div>
 				<?php

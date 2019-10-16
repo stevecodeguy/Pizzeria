@@ -80,7 +80,6 @@ node_modules/
 #####################
 
 .tmp/
-.sass/maps/
 
 # Ignore compiled CSS from repository
 *.css.map
