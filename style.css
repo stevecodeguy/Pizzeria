@@ -19,28 +19,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
-/*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
-----------------------------------------------------------------
-# Normalize
-# Typography
-# Elements
-# Forms
-# Navigation
-	## Links
-	## Menus
-# Accessibility
-# Alignments
-# Clearings
-# Widgets
-# Content
-	## Posts and pages
-	## Comments
-# Infinite scroll
-# Media
-	## Captions
-	## Galleries
---------------------------------------------------------------*/
+/*-------------------------------------------------------------- >>> TABLE OF CONTENTS: ---------------------------------------------------------------- # Normalize # Typography # Elements # Forms # Navigation ## Links ## Menus # Accessibility # Alignments # Clearings # Widgets # Content ## Posts and pages ## Comments # Infinite scroll # Media ## Captions ## Galleries --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -504,6 +483,64 @@ blockquote.wp-block-quote { width: 50%; margin: auto; }
 /*--------------------------------------------------------------
 # Pages
 --------------------------------------------------------------*/
+.postid-103 h1.product_title.entry-title, .postid-103 p.price, .postid-103 table.variations tbody { text-align: center; }
+
+.postid-103 td.label { text-align: right; }
+
+body.single-product { margin: 0 auto; }
+
+.postid-103 div.wc-pao-addon-container > label.wc-pao-addon-name { font-weight: 900; }
+
+.postid-103 div.product_meta { display: none; }
+
+.postid-103 div.single_variation_wrap div.single_variation { grid-column-start: 1; grid-column-end: 3; }
+
+.postid-103 #content { margin: 0 15px; }
+
+.postid-103 div.single_variation_wrap div.single_variation div.woocommerce-variation-price { text-align: center; }
+
+.postid-103 div.wc-tabs-wrapper { display: none; }
+
+.postid-103 div.wc-pao-addon-container > label.wc-pao-addon-name .form-row::before label { font-weight: 300; }
+
+.postid-103 #main div.product div.entry-summary .variations_form .single_variation_wrap { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 2; grid-row-gap: 8px; grid-column-gap: 8px; }
+
+.postid-103 #content #secondary { display: none; }
+
+.postid-103 div.product-addon-totals { margin-right: 16px; }
+
+.postid-103 div.single_variation_wrap div.woocommerce-variation-add-to-cart { margin: 0 16px; align-self: center; }
+
+.postid-103 .single_variation_wrap div.wc-pao-addon-sauce { grid-column-start: 1; height: 70px; }
+
+.postid-103 .single_variation_wrap div.wc-pao-addon-cheese { grid-column-start: 2; height: 70px; }
+
+#content #productsss-103 { margin: 0 auto; }
+
+.woocommerce #content div.product div.images, .woocommerce div.product div.images, .woocommerce-page #content div.product div.images, .woocommerce-page div.product div.images, .woocommerce #content div.product div.summary, .woocommerce div.product div.summary, .woocommerce-page #content div.product div.summary, .woocommerce-page div.product div.summary { clear: both; float: none; }
+
+.woocommerce #content div.product div.summary, .woocommerce div.product div.summary, .woocommerce-page #content div.product div.summary, .woocommerce-page div.product div.entry-summary { width: 100%; }
+
+#content #productsss-103 .woocommerce-product-gallery--with-images { clear: left; margin: 0 auto; }
+
+.error404 div.widget_categories { display: none; }
+
+.error404 div.widget_archive { display: none; }
+
+.error404 #content { margin: 0 32px 16px; }
+
+body.search-results #primary { margin: 0 16px; }
+
+body.search-results .content-area .entry-title { font-size: 1.1em; }
+
+body.search-results #main { display: grid; grid-template-columns: repeat(3, 1fr); }
+
+body.search-results #main header, body.search-results #main article.type-page { grid-column: span 3; text-align: center; }
+
+body.search-results #main article.type-product { margin: 16px; }
+
+body.search-results #main article.type-product a { height: 300px; }
+
 .home-related-products .woocommerce ul.products li.product .price, .home-related-products ul.products li.product .button { display: none; }
 
 .home-related-products { text-align: center; }
