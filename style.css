@@ -522,6 +522,12 @@ div.wc-pao-addon-container > label.wc-pao-addon-name .form-row::before label { f
 
 #content #productsss-103 .woocommerce-product-gallery--with-images { clear: left; margin: 0 auto; }
 
+.error404 div.widget_categories { display: none; }
+
+.error404 div.widget_archive { display: none; }
+
+.error404 #content { margin: 0 32px 16px; }
+
 .home-related-products .woocommerce ul.products li.product .price, .home-related-products ul.products li.product .button { display: none; }
 
 .home-related-products { text-align: center; }
