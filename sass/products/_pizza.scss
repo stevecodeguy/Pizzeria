@@ -58,6 +58,12 @@
 }
 
 
+.woocommerce p.woocommerce-result-count,
+.woocommerce form.woocommerce-ordering,
+.woocommerce nav.woocommerce-breadcrumb {
+    display: none;
+}
+
 
 @media screen and (min-width: 500px) {
 #post-237 .entry-content{
