@@ -284,6 +284,8 @@ a:hover, a:active { outline: 0; }
 
 .main-navigation.toggled { position: fixed; width: 100vw; height: 100vh; top: 0px; left: 0px; bottom: 0px; right: 10px; display: flex; flex-direction: column; align-items: stretch; }
 
+div.icon p { font-weight: 900; width: 100%; text-align: center; text-decoration: none; color: black; margin: 0 0 16px; }
+
 .menu-main-menu-container a { text-align: center; font-weight: bold; font-size: 1.1rem; color: black; }
 
 .menu-main-menu-container a:before { content: ''; position: absolute; right: 1px; display: inline-block; height: 1em; width: 20%; margin-right: 40%; }
