@@ -31,6 +31,8 @@ if (post_password_required()) {
     return;
 }
 ?>
+
+<div class="single-product-flex">
 <div id="product-<?php the_ID();?>" <?php wc_product_class('', $product);?>>
 
 	<?php
@@ -59,6 +61,7 @@ do_action('woocommerce_before_single_product_summary');
  */
 do_action('woocommerce_single_product_summary');
 ?>
+	</div>
 	</div>
 
 	<?php

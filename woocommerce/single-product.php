@@ -10,64 +10,64 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see 	    https://docs.woocommerce.com/document/template-structure/
- * @package 	WooCommerce/Templates
+ * @see         https://docs.woocommerce.com/document/template-structure/
+ * @package     WooCommerce/Templates
  * @version     1.6.4
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly
 }
 
-get_header( 'shop' ); ?>
+get_header('shop');?>
 
 
 	<?php
-		/**
-		 * woocommerce_before_main_content hook.
-		 *
-		 * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
-		 * @hooked woocommerce_breadcrumb - 20
-		 */
-		do_action( 'woocommerce_before_main_content' );
-	?>
-	<?php do_action('apply_header_images'); ?>
-		<?php while ( have_posts() ) : the_post(); ?>
+/**
+ * woocommerce_before_main_content hook.
+ *
+ * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
+ * @hooked woocommerce_breadcrumb - 20
+ */
+do_action('woocommerce_before_main_content');
+?>
+	<?php do_action('apply_header_images');?>
+		<?php while (have_posts()): the_post();?>
 
-			<?php
-				echo wp_get_attachment_image(189, 'full', '', array('id' => 'loading-front'));
-				echo wp_get_attachment_image(515, 'full', '', array('id' => 'loading-back'));
+					<?php
+    echo wp_get_attachment_image(189, 'full', '', array('id' => 'loading-front'));
+    echo wp_get_attachment_image(515, 'full', '', array('id' => 'loading-back'));
 
-				if(is_single('custom-pizza')){
-					wp_enqueue_script( 'lmpizza-custom', get_template_directory_uri() .'/js/custom-pizza.js', array(), '20191003', true );
+    if (is_single('custom-pizza')) {
+        wp_enqueue_script('lmpizza-custom', get_template_directory_uri() . '/js/custom-pizza.js', array(), '20191003', true);
 
-					wc_get_template_part( 'content', 'single-product-custom-pizza' );
-				} else {
-					wc_get_template_part( 'content', 'single-product' ); 
-				}
+        wc_get_template_part('content', 'single-product-custom-pizza');
+    } else {
+        wc_get_template_part('content', 'single-product');
+    }
 
-			?>
+    ?>
 
-		<?php endwhile; // end of the loop. ?>
-
-	<?php
-		/**
-		 * woocommerce_after_main_content hook.
-		 *
-		 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
-		 */
-		do_action( 'woocommerce_after_main_content' );
-	?>
+				<?php endwhile; // end of the loop. ?>
 
 	<?php
-		/**
-		 * woocommerce_sidebar hook.
-		 *
-		 * @hooked woocommerce_get_sidebar - 10
-		 */
-		do_action( 'woocommerce_sidebar' );
-	?>
+/**
+ * woocommerce_after_main_content hook.
+ *
+ * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
+ */
+do_action('woocommerce_after_main_content');
+?>
 
-<?php get_footer( 'shop' );
+	<?php
+/**
+ * woocommerce_sidebar hook.
+ *
+ * @hooked woocommerce_get_sidebar - 10
+ */
+do_action('woocommerce_sidebar');
+?>
+
+<?php get_footer('shop');
 
 /* Omit closing PHP tag at the end of PHP files to avoid "headers already sent" issues. */

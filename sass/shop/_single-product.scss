@@ -1,3 +1,34 @@
+@media(min-width: 600px) {
+	body.single-product div.product {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 10px;
+	}
+
+	body.woocommerce #content div.product div.summary,
+	.woocommerce div.product div.summary,
+	.woocommerce-page #content div.product div.summary,
+	.woocommerce-page div.product div.entry-summary {
+		width: 50%;
+	}
+
+	.woocommerce div.product div.images img {
+		padding-top: 50px;
+	}
+
+}
+
+.product_meta {
+	display: none;
+}
+
+.single-product .content-area {
+	max-width: 90%;
+	margin: auto;
+}
+
+
+
 /**
  * Single Product
  */
