@@ -40,7 +40,7 @@ if ($query->have_posts()) {
 
             echo '<div class="deal-image">';
             if (get_field('deal_image')) {
-                echo wp_get_attachment_image(get_field('deal_image'), 'medium', '', array("class" => "deal-slider"));
+                echo wp_get_attachment_image(get_field('deal_image'), 'full', '', array("class" => "deal-slider"));
             }
             echo '</div>';
         }
