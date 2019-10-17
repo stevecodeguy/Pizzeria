@@ -52,7 +52,11 @@
     color: white;
 }
 
-
+.woocommerce p.woocommerce-result-count,
+.woocommerce form.woocommerce-ordering,
+.woocommerce nav.woocommerce-breadcrumb {
+    display: none;
+}
 
 
 @media screen and (min-width: 500px) {
@@ -63,7 +67,6 @@
     padding:30px;
     }
 }
-
 
 @media screen and (min-width: 770px) {
 .woocommerce-ordering,
