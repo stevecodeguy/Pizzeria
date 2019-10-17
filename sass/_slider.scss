@@ -1,5 +1,5 @@
 h2.testimonials-title {
-    background-color: rgb(240, 240, 240);
+    background-color: white;
     margin: 0;
     padding: 30px 0 10px;
     text-align: center;
@@ -7,7 +7,7 @@ h2.testimonials-title {
 
 .testimonial-slider .slick-dots,
 .testimonial-slider {
-    background-color: rgb(240, 240, 240);
+    background-color: white;
 }
 
 blockquote.wp-block-quote {
@@ -19,7 +19,7 @@ blockquote.wp-block-quote {
 
 .deal-slider {
     width: 95%;
-    margin: auto;
+    margin: 20px auto;
 }
 
 
@@ -37,5 +37,11 @@ blockquote.wp-block-quote {
 
     blockquote.wp-block-quote {
         width: 60%;
+    }
+}
+
+@media(min-width: 1200px) {
+    .deal-slider {
+        width: 1250px;
     }
 }
