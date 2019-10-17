@@ -8,13 +8,51 @@
 }
 #post-237 .entry-content a{
     margin:20px;
- padding-left:70px;
- padding-right:70px;
+    padding-left:70px;
+    padding-right:70px;
 }
 #post-237 .entry-content a:hover{
    background-color: rgb(211, 76, 76);
    color: white;
    }
+
+// woocommerce general setting for all the product pages
+
+
+.woocommerce .woocommerce-breadcrumb  {
+    margin: 40px 0 0 20px;
+}
+
+.woocommerce-result-count, .woocommerce-page .woocommerce-result-count {
+    text-align: center;
+    float: none; 
+}
+.woocommerce-ordering, .woocommerce-page .woocommerce-ordering {
+    float: none; 
+    text-align: center;
+    margin-bottom: 100px;
+}
+.woocommerce-products-header h1{
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom:50px;
+}
+.columns-3{
+    width: 90%;
+    margin:0 auto;
+}
+.woocommerce ul.products li.product .woocommerce-loop-category__title,
+.woocommerce ul.products li.product .woocommerce-loop-product__title,
+.woocommerce ul.products li.product h3 {
+    color:rgb(50, 49, 49);
+}
+.woocommerce #respond input#submit,
+.woocommerce a.button:hover{
+    background-color: #90ad7d;
+    color: white;
+}
+
+
 
 
 @media screen and (min-width: 500px) {
@@ -25,6 +63,22 @@
     padding:30px;
     }
 }
+
+
+@media screen and (min-width: 770px) {
+.woocommerce-ordering,
+.woocommerce-page .woocommerce-ordering {
+    float: right;
+    margin-right: 100px;
+}
+
+.woocommerce-result-count,
+.woocommerce-page .woocommerce-result-count {
+    float: left; 
+    margin-left: 100px;
+}
+}
+
 @media screen and (min-width: 850px) {
     #post-237 .entry-content{
         width: 70%;
