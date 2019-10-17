@@ -1,25 +1,40 @@
-.woocommerce-cart div.site-content {
+.woocommerce-cart div.site-content,
+.woocommerce-checkout div.site-content {
 	width: 90%;
 	margin: 0 auto;
 }
 
-.woocommerce-cart div.coupon {
+.woocommerce-cart div.coupon,
+.woocommerce-checkout div.woocommerce-form-coupon-toggle {
 	display: none;
 }
 
-.woocommerce-cart .wc-proceed-to-checkout a.checkout-button {
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button,
+.woocommerce-checkout #payment #place_order {
 	background-color: #83253C;
 	color: #FEE06E;
 }
 
-.woocommerce a.button.alt:hover {
+.woocommerce a.button.alt:hover,
+.woocommerce-cart a.button:hover {
 	background-color: rgb(168, 53, 82);
 	color: #FEE06E;
 }
 
-.woocommerce-checkout div.site-content {
-	width: 90%;
-	margin: 0 auto;
+.woocommerce-checkout div.woocommerce-info,
+.woocommerce-cart div.entry-content p.woocommerce-info,
+.woocommerce-cart .woocommerce-noreviews p.no-comments {
+	background-color: rgba(131, 37, 60, 0.15);
+}
+
+.woocommerce-cart main#main  {
+	display: flex;
+	justify-content: center;
+}
+
+.woocommerce-cart p.return-to-shop {
+	width: 50%;
+	margin: 16px auto;
 }
 
 /**
