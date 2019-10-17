@@ -74,7 +74,7 @@ function hideShowControls(item, hideShow){
 }
 
 function fetchData(){
-    fetch('https://pizzeria.bcitwebdeveloper.ca/wp-json/wp/v2/media?per_page=100')
+    fetch('https://pizzeria.bcitwebdeveloper.ca/wp-json/wp/v2/media?per_page=100&slug=red-onions,tomatoes,feta,parmesan,pineapple,onions,mushrooms,pizza-crust,provolone,mozzarella-and-cheddar-blend,mozzarella,cheddar,roasted-red-peppers,salami,sausage,organic-tomato-sauce,pepperoni,fresh-salsa,salmon,black-olives,cheesy-cheddar-sauce,green-olives,alfredo-sauce,roasted-corn,barbeque-sauce,anchovies,jalapeno-peppers,baby-spinach,green-peppers,hot-banana-peppers,chicken,philly-steak,ground-beef,canadian-ham,bacon,beyond-meat')
         .then(response => response.json())
         .then((data) => {
             data.map((ingredient) => {
@@ -124,7 +124,7 @@ function fetchData(){
             loadingFront.parentNode.removeChild(loadingFront);
             loadingBack.parentNode.removeChild(loadingBack);
         })
-        // .then(() => console.log(ingredientObjects, ingredientObjects.length))
+        .then(() => console.log(ingredientObjects, ingredientObjects.length))
         .catch(error => alert(error));
     }
 
