@@ -200,7 +200,7 @@ dt { font-weight: bold; }
 
 dd { margin: 0 1.5em 1.5em; }
 
-img { height: auto; /* Make sure images are scaled correctly. */ width: 100%; /* Adhere to container width. */ }
+img { height: auto; /* Make sure images are scaled correctly. */ max-width: 100%; /* Adhere to container width. */ }
 
 figure { margin: 1em 0; /* Extra wide images within figure tags don't overflow the content area. */ }
 
@@ -535,7 +535,7 @@ blockquote.wp-block-quote { width: 85%; margin: auto; text-align: center; paddin
 
 @media only screen and (min-width: 650px) { .about-family-info-wrapper li { width: 100%; margin: 0 auto; } }
 
-@media only screen and (min-width: 800px) { .entry-content p { max-width: 700px; margin: 0 auto; padding-bottom: 20px; font-size: 1.2rem; line-height: 1.6; }
+@media only screen and (min-width: 800px) { .entry-content p { max-width: 700px; margin: 0 auto; padding-bottom: 20px; font-size: 1rem; line-height: 1.6; }
 	.about-family-info-wrapper li { padding: 50px; }
 	.about-family-info-wrapper ul { line-height: 1.6; } }
 
@@ -697,7 +697,15 @@ ul.products li.product .button { display: block; }
 .stock.out-of-stock { color: #e2401c; }
 
 /** Checkout */
-body { width: 90%; margin: 0 auto; }
+.woocommerce-cart div.site-content { width: 90%; margin: 0 auto; }
+
+.woocommerce-cart div.coupon { display: none; }
+
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button { background-color: #83253C; color: #FEE06E; }
+
+.woocommerce a.button.alt:hover { background-color: #a83552; color: #FEE06E; }
+
+.woocommerce-checkout div.site-content { width: 90%; margin: 0 auto; }
 
 /** Checkout */
 @media screen and (min-width: 768px) { .col2-set .form-row-first { float: left; margin-right: 3.8%; }

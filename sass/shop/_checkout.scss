@@ -1,8 +1,26 @@
-body {
+.woocommerce-cart div.site-content {
 	width: 90%;
 	margin: 0 auto;
 }
 
+.woocommerce-cart div.coupon {
+	display: none;
+}
+
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button {
+	background-color: #83253C;
+	color: #FEE06E;
+}
+
+.woocommerce a.button.alt:hover {
+	background-color: rgb(168, 53, 82);
+	color: #FEE06E;
+}
+
+.woocommerce-checkout div.site-content {
+	width: 90%;
+	margin: 0 auto;
+}
 
 /**
  * Checkout
