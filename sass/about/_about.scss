@@ -3,7 +3,7 @@
 --------------------------------------------------------------*/
 
 .page-about {
-    width: 80%;
+    max-width: 1100px;
     margin: 0 auto;
     text-align: center;
     font-family: 'Raleway', 'Roboto';
@@ -19,10 +19,9 @@
     font-size: 3rem;
 }
 
-
 .about-family-info-wrapper {
-    margin-bottom: 10%;
-    text-align: center;
+    padding: 30px;
+    text-align: left;
 }
 
 .about-family-info-wrapper ul {
@@ -45,69 +44,71 @@
 }
 
 .about-family-contain-2 {
-    margin-bottom: 10%;
+    margin-bottom: 20px;
 }
 
-@media only screen and (min-width: 850px) {
+@media only screen and (min-width: 650px) {
+    .about-family-info-wrapper li {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (min-width: 800px) {
     .entry-content p {
-        max-width: 70%;
+        max-width: 700px;
         margin: 0 auto;
         padding-bottom: 20px;
+        font-size: 1.2rem;
+        line-height: 1.6;
+    }
+
+    .about-family-info-wrapper li {
+        padding: 50px;
     }
 
     .about-family-info-wrapper ul {
-        line-height: 1.5;
+        line-height: 1.6;
     }
 }
 
-        @media only screen and (min-width: 650px) {
-           
-            .about-family-info-wrapper li {
-                width: 100%;
-                margin: 0 auto;
-            }
+@media only screen and (min-width: 1000px) {
+    .about-family-info-wrapper {
+        width: 100%;
+        margin: 0 auto;
+        padding-top:50px;
+    }
+    .about-family-info-wrapper li {
+        padding: 0;
+    }
+    .about-family-info-wrapper ul {
+        padding: 20px;
+    }
+    .about-family-contain-1 {
+        display: flex;
+        justify-content: space-between;
+    }
 
-            .about-family-info-wrapper .about-family-contain-1 .about-family-img-1 img  {
-                padding:20px;
-                
-            }
-            .about-family-info-wrapper .about-family-contain-2 .about-family-img-2 img  {
-                padding:20px;
-            }
-        }
+    .about-family-text-2 {
+        display: block;
+    }
 
-        @media only screen and (min-width: 1059px) {
-            .about-family-info-wrapper {
-                width: 100%;
-                margin: 0 auto;
-            }
-            .about-family-contain-1 {
-                display: flex;
-                justify-content: space-between;
-            }
+    .about-family-text-3 {
+        display: none;
+    }
 
-            .about-family-text-2 {
-                display: block;
-            }
+    .about-family-contain-2 {
+        display: flex;
+    }
 
-            .about-family-text-3 {
-                display: none;
-            }
-            .about-family-contain-2 {
-                display: flex;
-            }
-           
-            .about-family-info-wrapper .about-family-contain-1 .about-family-text-1{
-                line-height: 1.6;
-                padding:20px;
-            }
+    .about-family-info-wrapper .about-family-contain-1 .about-family-text-1 {
+        line-height: 1.7;
+        padding: 10px 0 0 40px;
+    }
 
-            .about-family-contain-2 .about-family-text-2 {
-                line-height: 1.6;
-            }
-        }
+    .about-family-contain-2 .about-family-text-2 {
+        line-height: 1.7;
+        padding: 10px 40px 0 0;
+    }
+}
 
-        @media only screen and (min-width: 1200px) {
-            
-        }
-    
