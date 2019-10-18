@@ -10,7 +10,19 @@
 }
 
 .content-area .entry-title {
-    font-size: 4rem;
+    font-size: 2rem;
+}
+
+@media(min-width:550px) {
+    .content-area .entry-title {
+        font-size: 3rem;
+    }
+}
+
+@media(min-width:1000px) {
+    .content-area .entry-title {
+        font-size: 4rem;
+    }
 }
 
 .wp-block-cover .wp-block-cover__inner-container p {

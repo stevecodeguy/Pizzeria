@@ -4,6 +4,7 @@
 	right: 0;
 	width: 100%;
 	z-index: 9999;
+	margin-bottom: 0;
 }
 
 .menu-main-menu-container ul {
@@ -211,7 +212,10 @@ div.icon p {
 	justify-content: space-between;
 	margin: 0 auto;
 	width: 80%;
+	// margin-top: 50px;
 }
+
+
 
 .product-navigation .icon svg:hover {
 	padding: 5px;
@@ -221,8 +225,23 @@ div.icon p {
 
 
 @media screen and (min-width: 450px) {
+
+	body.single-product .product-navigation,
+	body.woocommerce-cart .product-navigation,
+	body.woocommerce-active .product-navigation {
+		margin-top: 50px;
+	}
+
+	body.home .product-navigation {
+		margin-top: 0;
+	}
+
 	.menu-toggle {
 		display: none;
+	}
+
+	.product-navigation {
+		margin-top: 0;
 	}
 
 	// ----------------------------- Not our Stuff ------------------------- ?????????????
@@ -259,7 +278,10 @@ div.icon p {
 	.main-navigation {
 		width: 100%;
 		right: 0;
-		top: 20px;
+		// top: 20px;
+		margin: 30px 0;
+		// position: relative;
+		position: absolute;
 	}
 
 	.main-navigation ul {
@@ -281,12 +303,13 @@ div.icon p {
 
 	.menu-main-menu-container a {
 		font-weight: bold;
-		color: #83243c;
+		color: #ecce23;
 		font-size: 0.8rem;
 	}
 
 	.menu-main-menu-container a:hover {
-		color: #fee867;
+		color: #83243c;
+		;
 		transition: opacity 0.35s, transform 0.35s;
 	}
 
@@ -297,7 +320,7 @@ div.icon p {
 		display: inline-block;
 		height: 1em;
 		width: 100%;
-		border-bottom: 2px solid #fee867;
+		border-bottom: 2px solid #83243c;
 		margin-right: 0;
 		margin-top: 10px;
 		opacity: 0;
