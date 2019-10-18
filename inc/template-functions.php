@@ -123,7 +123,7 @@ add_action('admin_menu', 'lmpizza_remove_menus');
  * custom dashboard widget added
  */
 function lmpizza_custom_dashboard_widget() {
-	echo "<p>Welcome to the back end of La Migliore. Please find instructions below on how to use this site:</p>";
+	echo "<p>Welcome to the back end of La Migliore. Please find instructions below on how to use this site:</p> <p><a href='https://pizzeria.bcitwebdeveloper.ca/wp-content/uploads/2019/10/La-Migliore-Pizza-Tutorial-Guide.docx'>Click Here!</a></p>";
 }
 
 function lmpizza_add_custom_dashboard_widget() {
